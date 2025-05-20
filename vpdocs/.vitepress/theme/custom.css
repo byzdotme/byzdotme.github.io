@@ -1,9 +1,9 @@
 :root {
-  --vp-c-brand: #3eaf7c;
-  --vp-c-brand-light: #4abf8a;
-  --vp-c-brand-lighter: #5ccf99;
-  --vp-c-brand-dark: #369469;
-  --vp-c-brand-darker: #2d7a5e;
+  --vp-c-brand: #4a90e2;
+  --vp-c-brand-light: #6ba5e9;
+  --vp-c-brand-lighter: #8cbaf0;
+  --vp-c-brand-dark: #3a7bc8;
+  --vp-c-brand-darker: #2a6cb8;
 }
 
 .VPHome {

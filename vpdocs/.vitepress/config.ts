@@ -6,6 +6,7 @@ export default defineConfig({
   title: "小朱的个人网站",
   description: "个人简历与作品集展示",
   lang: 'zh-CN',
+  cleanUrls: true,
   locales: {
     root: {
       label: 'English',
