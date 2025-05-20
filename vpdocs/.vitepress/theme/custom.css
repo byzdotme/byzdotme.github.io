@@ -1,0 +1,131 @@
+:root {
+  --vp-c-brand: #3eaf7c;
+  --vp-c-brand-light: #4abf8a;
+  --vp-c-brand-lighter: #5ccf99;
+  --vp-c-brand-dark: #369469;
+  --vp-c-brand-darker: #2d7a5e;
+}
+
+.VPHome {
+  padding-top: 0 !important;
+}
+
+.VPHome .main {
+  padding-top: 0 !important;
+}
+
+.VPHome .container {
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.VPHome .VPHero {
+  min-height: 60vh;
+  background: linear-gradient(135deg, var(--vp-c-brand) 0%, var(--vp-c-brand-dark) 100%);
+  color: white;
+}
+
+.VPHome .VPHero .container {
+  padding: 0 24px;
+}
+
+.VPHome .VPHero .main {
+  text-align: center;
+}
+
+.VPHome .VPHero .name,
+.VPHome .VPHero .text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.VPHome .VPHero .tagline {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  opacity: 0.9;
+}
+
+.VPHome .VPHero .actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.VPHome .VPHero .actions .VPButton {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+.VPHome .VPHero .actions .VPButton.medium.brand {
+  background-color: white;
+  color: var(--vp-c-brand);
+  border: none;
+}
+
+.VPHome .VPHero .actions .VPButton.medium.alt {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.VPHome .VPHero .actions .VPButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.VPHome .VPFeatures {
+  padding: 4rem 24px;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.VPHome .VPFeatures .container {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.VPHome .VPFeatures .item {
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: var(--vp-c-bg);
+  transition: transform 0.3s ease;
+}
+
+.VPHome .VPFeatures .item:hover {
+  transform: translateY(-4px);
+}
+
+.VPHome .VPFeatures .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-bottom: 1rem;
+}
+
+.VPHome .VPFeatures .details {
+  font-size: 1.1rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .VPHome .VPHero .name,
+  .VPHome .VPHero .text {
+    font-size: 2.5rem;
+  }
+
+  .VPHome .VPHero .tagline {
+    font-size: 1.2rem;
+  }
+
+  .VPHome .VPHero .actions {
+    flex-direction: column;
+  }
+
+  .VPHome .VPHero .actions .VPButton {
+    width: 100%;
+  }
+} 

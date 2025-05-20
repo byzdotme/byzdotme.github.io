@@ -1,0 +1,21 @@
+{
+  "name": "byzdotme",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev vpdocs",
+    "docs:build": "vitepress build vpdocs",
+    "docs:preview": "vitepress preview vpdocs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^20.17.48",
+    "typescript": "^5.8.3",
+    "vitepress": "^1.6.3"
+  }
+}
