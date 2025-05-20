@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { content } from '../../../src/i18n/content'
+import { pageElement } from '../../../src/i18n/page-element'
 
 const { lang } = useData()
-// 添加语言回退逻辑，如果当前语言不存在，使用 'en'
 const currentContent = content[lang.value] || content['en']
+const currentElement = pageElement[lang.value] || pageElement['en']
 
 const formatDate = (date: string) => {
   return date.replace('至今', 'Present')
@@ -15,22 +16,22 @@ const formatDate = (date: string) => {
   <div class="profile-container">
     <!-- 个人信息 -->
     <section class="profile-section">
-      <h2>{{ lang === 'zh' ? '个人信息' : 'Personal Information' }}</h2>
+      <h2>{{ currentElement.profile.personalInfo.title }}</h2>
       <div class="info-grid">
         <div class="info-item">
-          <strong>{{ lang === 'zh' ? '姓名' : 'Name' }}:</strong>
+          <strong>{{ currentElement.profile.personalInfo.name }}:</strong>
           <span>{{ currentContent.personalInfo.name }}</span>
         </div>
         <div class="info-item">
-          <strong>{{ lang === 'zh' ? '出生日期' : 'Birth Date' }}:</strong>
+          <strong>{{ currentElement.profile.personalInfo.birthDate }}:</strong>
           <span>{{ currentContent.personalInfo.birthDate }}</span>
         </div>
         <div class="info-item">
-          <strong>{{ lang === 'zh' ? '所在地' : 'Location' }}:</strong>
+          <strong>{{ currentElement.profile.personalInfo.location }}:</strong>
           <span>{{ currentContent.personalInfo.location }}</span>
         </div>
         <div class="info-item">
-          <strong>{{ lang === 'zh' ? '兴趣爱好' : 'Hobbies' }}:</strong>
+          <strong>{{ currentElement.profile.personalInfo.hobbies }}:</strong>
           <span>{{ currentContent.personalInfo.hobbies.join(', ') }}</span>
         </div>
       </div>
@@ -38,7 +39,7 @@ const formatDate = (date: string) => {
 
     <!-- 教育经历 -->
     <section class="profile-section">
-      <h2>{{ lang === 'zh' ? '教育经历' : 'Education' }}</h2>
+      <h2>{{ currentElement.profile.education.title }}</h2>
       <div class="timeline">
         <div v-for="edu in currentContent.education" :key="edu.period" class="timeline-item">
           <div class="timeline-period">{{ edu.period }}</div>
@@ -52,7 +53,7 @@ const formatDate = (date: string) => {
 
     <!-- 工作经历 -->
     <section class="profile-section">
-      <h2>{{ lang === 'zh' ? '工作经历' : 'Work Experience' }}</h2>
+      <h2>{{ currentElement.profile.workExperience.title }}</h2>
       <div class="timeline">
         <div v-for="work in currentContent.workExperience" :key="work.period" class="timeline-item">
           <div class="timeline-period">{{ formatDate(work.period) }}</div>
@@ -66,7 +67,7 @@ const formatDate = (date: string) => {
 
     <!-- 技能 -->
     <section class="profile-section">
-      <h2>{{ lang === 'zh' ? '技能' : 'Skills' }}</h2>
+      <h2>{{ currentElement.profile.skills.title }}</h2>
       <div class="skills-grid">
         <div v-for="skill in currentContent.skills" :key="skill.category" class="skill-category">
           <h3>{{ skill.category }}</h3>
@@ -79,7 +80,7 @@ const formatDate = (date: string) => {
 
     <!-- 联系方式 -->
     <section class="profile-section">
-      <h2>{{ lang === 'zh' ? '联系方式' : 'Contact' }}</h2>
+      <h2>{{ currentElement.profile.contact.title }}</h2>
       <div class="contact-grid">
         <div class="contact-item">
           <strong>Email:</strong>

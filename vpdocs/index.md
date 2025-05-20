@@ -5,83 +5,73 @@ layout: home
 
 <script setup>
 import { useData } from 'vitepress'
-import { content } from './src/i18n/content'
+import { content, pageElement } from './src/i18n/content'
+import { defaultLocale, getCurrentContentWithFallback } from './src/i18n/config'
+import Profile from '.vitepress/theme/components/Profile.vue'
 
 const { lang } = useData()
-const currentContent = content[lang.value] || content['en']
+const defaultContent = content[defaultLocale]
+const currentContent = getCurrentContentWithFallback(content, lang.value, ['personalInfo'])
+const currentElement = getCurrentContentWithFallback(pageElement, lang.value, ['home'])
 
+// 定义 hero 部分
 const hero = {
-  name: currentContent.personalInfo.name,
-  text: lang.value === 'zh' ? 'Java后端工程师' : 'Java Backend Engineer',
-  tagline: lang.value === 'zh' 
-    ? '热爱软件开发与技术创新的全栈工程师'
-    : 'Passionate about software development and technology innovation',
+  name: currentContent.personalInfo.name || defaultContent.personalInfo.name,
+  text: currentElement.home.hero.text,
+  tagline: currentElement.home.hero.tagline,
   actions: [
     {
       theme: 'brand',
-      text: lang.value === 'zh' ? '关于我' : 'About Me',
-      link: lang.value === 'zh' ? '/zh/about' : '/about'
+      text: currentElement.home.hero.actions.about.text,
+      link: currentElement.home.hero.actions.about.link
     },
     {
       theme: 'alt',
-      text: lang.value === 'zh' ? '查看作品' : 'View Projects',
-      link: lang.value === 'zh' ? '/zh/projects' : '/projects'
+      text: currentElement.home.hero.actions.projects.text,
+      link: currentElement.home.hero.actions.projects.link
     }
   ]
 }
 
+// 定义特性部分
 const features = [
   {
-    title: lang.value === 'zh' ? '后端开发' : 'Backend Development',
-    details: currentContent.skills.find(s => 
-      s.category === (lang.value === 'zh' ? '后端开发' : 'Backend Development')
-    )?.items.join('. ')
+    title: currentElement.home.features.backend.title,
+    details: currentContent.skills.find(s => s.category === 'Backend')?.items.join(', ') || ''
   },
   {
-    title: lang.value === 'zh' ? '前端开发' : 'Frontend Development',
-    details: currentContent.skills.find(s => 
-      s.category === (lang.value === 'zh' ? '前端开发' : 'Frontend Development')
-    )?.items.join('. ')
+    title: currentElement.home.features.frontend.title,
+    details: currentContent.skills.find(s => s.category === 'Frontend')?.items.join(', ') || ''
   },
   {
-    title: lang.value === 'zh' ? '全栈经验' : 'Full Stack Experience',
-    details: lang.value === 'zh'
-      ? '具有构建和维护全栈应用的经验，注重可扩展性和性能优化。'
-      : 'Experience in building and maintaining full-stack applications with a focus on scalability and performance.'
+    title: currentElement.home.features.fullstack.title,
+    details: currentElement.home.features.fullstack.details
   }
 ]
 </script>
 
 <template>
-  <div class="home">
-    <div class="VPHero">
-      <div class="container">
-        <div class="main">
-          <h1 class="name">{{ hero.name }}</h1>
-          <p class="text">{{ hero.text }}</p>
-          <p class="tagline">{{ hero.tagline }}</p>
-          <div class="actions">
-            <a
-              v-for="action in hero.actions"
-              :key="action.text"
-              :href="action.link"
-              :class="['VPButton', 'medium', action.theme]"
-            >
-              {{ action.text }}
-            </a>
-          </div>
-        </div>
+  <div class="home-page">
+    <div class="hero">
+      <h1 class="name">{{ hero.name }}</h1>
+      <p class="text">{{ hero.text }}</p>
+      <p class="tagline">{{ hero.tagline }}</p>
+      <div class="actions">
+        <a
+          v-for="action in hero.actions"
+          :key="action.text"
+          :href="action.link"
+          :class="['action', action.theme]"
+        >
+          {{ action.text }}
+        </a>
       </div>
     </div>
 
-    <div class="VPFeatures">
-      <div class="container">
-        <div class="items">
-          <div v-for="feature in features" :key="feature.title" class="item">
-            <h2 class="title">{{ feature.title }}</h2>
-            <p class="details">{{ feature.details }}</p>
-          </div>
-        </div>
+    <div class="features">
+      <div v-for="feature in features" :key="feature.title" class="feature">
+        <h2>{{ feature.title }}</h2>
+        <p>{{ feature.details }}</p>
       </div>
     </div>
 

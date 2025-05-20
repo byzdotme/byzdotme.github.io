@@ -4,39 +4,39 @@ layout: doc
 
 <script setup>
 import { useData } from 'vitepress'
+import { content, pageElement, projectTypes } from './src/i18n/content'
+import { defaultLocale, getCurrentContentWithFallback } from './src/i18n/config'
 
 const { lang } = useData()
+const defaultContent = content[defaultLocale]
+const currentContent = getCurrentContentWithFallback(content, lang.value, ['contact'])
+const currentElement = getCurrentContentWithFallback(pageElement, lang.value, ['projects'])
 
-const title = lang.value === 'zh' ? '作品集' : 'Projects'
-const subtitle = lang.value === 'zh' 
-  ? '这里展示了我的一些个人项目和工作成果'
-  : 'Here are some of my personal projects and work achievements'
-
-// 示例项目数据，后续可以从 API 获取
+// 生成项目列表
 const projects = [
   {
-    title: lang.value === 'zh' ? '个人网站' : 'Personal Website',
-    description: lang.value === 'zh'
-      ? '使用 VitePress 构建的个人网站，支持中英文双语，展示个人简历和作品集。'
-      : 'A personal website built with VitePress, supporting both English and Chinese, showcasing resume and portfolio.',
-    tech: ['VitePress', 'Vue 3', 'TypeScript', 'Markdown'],
-    link: 'https://github.com/yourusername/byzdotme'
-  },
-  {
-    title: lang.value === 'zh' ? '待添加项目' : 'More Projects Coming Soon',
-    description: lang.value === 'zh'
-      ? '更多项目正在开发中...'
-      : 'More projects are under development...',
-    tech: [],
-    link: null
+    title: projectTypes.personalWebsite.title[lang.value] || projectTypes.personalWebsite.title[defaultLocale],
+    description: projectTypes.personalWebsite.description[lang.value] || projectTypes.personalWebsite.description[defaultLocale],
+    tech: projectTypes.personalWebsite.tech,
+    link: projectTypes.personalWebsite.getLink(currentContent)
   }
 ]
+
+// 如果有 comingSoon 配置，添加到项目列表中
+if (currentElement.projects.comingSoon?.title) {
+  projects.push({
+    title: currentElement.projects.comingSoon.title,
+    description: currentElement.projects.comingSoon.description || '',
+    tech: [],
+    link: null
+  })
+}
 </script>
 
 <template>
   <div class="projects-page">
-    <h1>{{ title }}</h1>
-    <p class="subtitle">{{ subtitle }}</p>
+    <h1>{{ currentElement.projects.title }}</h1>
+    <p class="subtitle">{{ currentElement.projects.subtitle }}</p>
 
     <div class="projects-grid">
       <div v-for="project in projects" :key="project.title" class="project-card">
@@ -54,7 +54,7 @@ const projects = [
           rel="noopener noreferrer"
           class="project-link"
         >
-          {{ lang.value === 'zh' ? '查看项目' : 'View Project' }}
+          {{ currentElement.projects.viewProject }}
         </a>
       </div>
     </div>

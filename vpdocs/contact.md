@@ -4,38 +4,53 @@ layout: doc
 
 <script setup>
 import { useData } from 'vitepress'
-import { content } from '../src/i18n/content'
+import { content, pageElement } from './src/i18n/content'
+import { defaultLocale, getCurrentContentWithFallback } from './src/i18n/config'
 
 const { lang } = useData()
-const currentContent = content[lang.value] || content['en']
+const defaultContent = content[defaultLocale]
+const currentContent = getCurrentContentWithFallback(content, lang.value, ['contact'])
+const currentElement = getCurrentContentWithFallback(pageElement, lang.value, ['contact'])
 
-const title = lang.value === 'zh' ? '联系方式' : 'Contact'
-const subtitle = lang.value === 'zh'
-  ? '如果您有任何问题或合作意向，欢迎通过以下方式联系我'
-  : 'Feel free to reach out to me through the following channels'
-
-const contactInfo = [
+// 定义联系方式类型
+const contactTypes = [
   {
+    type: 'email',
     icon: '📧',
     label: 'Email',
-    value: currentContent.contact.email,
-    link: `mailto:${currentContent.contact.email}`
+    getValue: (content) => content?.contact?.email || defaultContent.contact.email,
+    getLink: (value) => value ? `mailto:${value}` : '#'
   },
   {
+    type: 'github',
     icon: '🐙',
     label: 'GitHub',
-    value: currentContent.contact.github.replace('https://github.com/', ''),
-    link: currentContent.contact.github
+    getValue: (content) => content?.contact?.github ? content.contact.github.replace('https://github.com/', '') : defaultContent.contact.github.replace('https://github.com/', ''),
+    getLink: (value) => value ? `https://github.com/${value}` : '#'
   }
 ]
+
+// 生成联系方式数组，只包含有值的联系方式
+const contactInfo = contactTypes
+  .map(type => {
+    const value = type.getValue(currentContent)
+    if (!value) return null
+    return {
+      icon: type.icon,
+      label: type.label,
+      value,
+      link: type.getLink(value)
+    }
+  })
+  .filter(item => item !== null)
 </script>
 
 <template>
   <div class="contact-page">
-    <h1>{{ title }}</h1>
-    <p class="subtitle">{{ subtitle }}</p>
+    <h1>{{ currentElement.contact.title }}</h1>
+    <p class="subtitle">{{ currentElement.contact.subtitle }}</p>
 
-    <div class="contact-grid">
+    <div v-if="contactInfo.length > 0" class="contact-grid">
       <a
         v-for="info in contactInfo"
         :key="info.label"
@@ -53,19 +68,13 @@ const contactInfo = [
     </div>
 
     <div class="message-board">
-      <h2>{{ lang.value === 'zh' ? '留言板' : 'Message Board' }}</h2>
+      <h2>{{ currentElement.contact.messageBoard.title }}</h2>
       <p class="message-subtitle">
-        {{ lang.value === 'zh'
-          ? '您也可以在这里留下您的留言，我会尽快回复'
-          : 'You can also leave a message here, and I will reply as soon as possible'
-        }}
+        {{ currentElement.contact.messageBoard.subtitle }}
       </p>
       <!-- 这里可以集成留言板组件 -->
       <div class="message-board-placeholder">
-        {{ lang.value === 'zh'
-          ? '留言板功能正在开发中...'
-          : 'Message board feature is under development...'
-        }}
+        {{ currentElement.contact.messageBoard.placeholder }}
       </div>
     </div>
   </div>
