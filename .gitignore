@@ -3,3 +3,5 @@ vpdocs/.vitepress/cache
 vpdocs/.vitepress/temp
 vpdocs/.vitepress/dist
 CNAME
+.temp
+.DS_Store
