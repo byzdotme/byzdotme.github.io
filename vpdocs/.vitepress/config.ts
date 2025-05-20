@@ -30,13 +30,13 @@ export default defineConfig({
           }
         ],
         socialLinks: [
-          { icon: 'github', link: 'https://github.com/byzdotme' }
+          { icon: 'github', link: 'https://github.com/yourusername' }
         ]
       }
     },
     zh: {
       label: '简体中文',
-      lang: 'zh-CN',
+      lang: 'zh',
       title: "小朱的个人网站",
       description: "个人简历与作品集展示",
       themeConfig: {
@@ -57,7 +57,7 @@ export default defineConfig({
           }
         ],
         socialLinks: [
-          { icon: 'github', link: 'https://github.com/byzdotme' }
+          { icon: 'github', link: 'https://github.com/yourusername' }
         ]
       }
     }
@@ -81,7 +81,7 @@ export default defineConfig({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/byzdotme' }
+      { icon: 'github', link: 'https://github.com/yourusername' }
     ]
   },
   vite: {

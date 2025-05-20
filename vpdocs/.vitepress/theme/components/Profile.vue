@@ -3,7 +3,8 @@ import { useData } from 'vitepress'
 import { content } from '../../../src/i18n/content'
 
 const { lang } = useData()
-const currentContent = content[lang.value]
+// 添加语言回退逻辑，如果当前语言不存在，使用 'en'
+const currentContent = content[lang.value] || content['en']
 
 const formatDate = (date: string) => {
   return date.replace('至今', 'Present')
