@@ -1,47 +1,130 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
-import { content } from '../../../src/i18n/content'
-import { pageElement } from '../../../src/i18n/page-element'
-
-const { lang } = useData()
-const currentContent = content[lang.value] || content['en']
-const currentElement = pageElement[lang.value] || pageElement['en']
-
-const formatDate = (date: string) => {
-  return date.replace('至今', 'Present')
+interface PersonalInfo {
+  name: string;
+  birthDate: string;
+  location: string;
+  hobbies: string[];
 }
+
+interface Education {
+  period: string;
+  degree: string;
+  school: string;
+  major: string;
+}
+
+interface WorkExperience {
+  period: string;
+  company: string;
+  position: string;
+}
+
+interface Skill {
+  category: string;
+  items: string[];
+}
+
+interface ContactInfo {
+  email: string;
+  github: string;
+}
+
+const personalInfo: PersonalInfo = {
+  name: "小朱",
+  birthDate: "1989.06",
+  location: "北京",
+  hobbies: ["羽毛球"]
+};
+
+const education: Education[] = [
+  {
+    period: "2007-2011",
+    degree: "本科",
+    school: "某世界一流大学",
+    major: "软件工程"
+  }
+];
+
+const workExperience: WorkExperience[] = [
+  {
+    period: "2018至今",
+    company: "某外卖公司",
+    position: "Java后端工程师"
+  },
+  {
+    period: "2017-2018",
+    company: "某手机公司",
+    position: "Java后端工程师"
+  },
+  {
+    period: "2015-2017",
+    company: "某房产中介公司",
+    position: "Java后端工程师"
+  }
+];
+
+const skills: Skill[] = [
+  {
+    category: "后端开发",
+    items: [
+      "精通Java技术栈",
+      "MySQL、PostgreSQL等关系型数据库",
+      "NoSQL数据库",
+      "大数据体系"
+    ]
+  },
+  {
+    category: "前端开发",
+    items: [
+      "熟悉web前端技术",
+      "尤其熟悉Vue技术栈"
+    ]
+  },
+  {
+    category: "其他技能",
+    items: [
+      "了解移动端开发领域",
+      "了解大模型应用"
+    ]
+  }
+];
+
+const contact: ContactInfo = {
+  email: "your.email@example.com",
+  github: "https://github.com/byzdotme"
+};
 </script>
 
 <template>
   <div class="profile-container">
     <!-- 个人信息 -->
     <section class="profile-section">
-      <h2>{{ currentElement.profile.personalInfo.title }}</h2>
+      <h2>个人信息</h2>
       <div class="info-grid">
         <div class="info-item">
-          <strong>{{ currentElement.profile.personalInfo.name }}:</strong>
-          <span>{{ currentContent.personalInfo.name }}</span>
+          <strong>姓名:</strong>
+          <span>{{ personalInfo.name }}</span>
         </div>
         <div class="info-item">
-          <strong>{{ currentElement.profile.personalInfo.birthDate }}:</strong>
-          <span>{{ currentContent.personalInfo.birthDate }}</span>
+          <strong>出生日期:</strong>
+          <span>{{ personalInfo.birthDate }}</span>
         </div>
         <div class="info-item">
-          <strong>{{ currentElement.profile.personalInfo.location }}:</strong>
-          <span>{{ currentContent.personalInfo.location }}</span>
+          <strong>所在地:</strong>
+          <span>{{ personalInfo.location }}</span>
         </div>
         <div class="info-item">
-          <strong>{{ currentElement.profile.personalInfo.hobbies }}:</strong>
-          <span>{{ currentContent.personalInfo.hobbies.join(', ') }}</span>
+          <strong>兴趣爱好:</strong>
+          <span>{{ personalInfo.hobbies.join(', ') }}</span>
         </div>
       </div>
     </section>
 
     <!-- 教育经历 -->
     <section class="profile-section">
-      <h2>{{ currentElement.profile.education.title }}</h2>
+      <h2>教育经历</h2>
       <div class="timeline">
-        <div v-for="edu in currentContent.education" :key="edu.period" class="timeline-item">
+        <div v-for="edu in education" :key="edu.period" class="timeline-item">
           <div class="timeline-period">{{ edu.period }}</div>
           <div class="timeline-content">
             <h3>{{ edu.degree }} - {{ edu.major }}</h3>
@@ -53,10 +136,10 @@ const formatDate = (date: string) => {
 
     <!-- 工作经历 -->
     <section class="profile-section">
-      <h2>{{ currentElement.profile.workExperience.title }}</h2>
+      <h2>工作经历</h2>
       <div class="timeline">
-        <div v-for="work in currentContent.workExperience" :key="work.period" class="timeline-item">
-          <div class="timeline-period">{{ formatDate(work.period) }}</div>
+        <div v-for="work in workExperience" :key="work.period" class="timeline-item">
+          <div class="timeline-period">{{ work.period }}</div>
           <div class="timeline-content">
             <h3>{{ work.position }}</h3>
             <p>{{ work.company }}</p>
@@ -67,9 +150,9 @@ const formatDate = (date: string) => {
 
     <!-- 技能 -->
     <section class="profile-section">
-      <h2>{{ currentElement.profile.skills.title }}</h2>
+      <h2>技能</h2>
       <div class="skills-grid">
-        <div v-for="skill in currentContent.skills" :key="skill.category" class="skill-category">
+        <div v-for="skill in skills" :key="skill.category" class="skill-category">
           <h3>{{ skill.category }}</h3>
           <ul>
             <li v-for="item in skill.items" :key="item">{{ item }}</li>
@@ -80,16 +163,16 @@ const formatDate = (date: string) => {
 
     <!-- 联系方式 -->
     <section class="profile-section">
-      <h2>{{ currentElement.profile.contact.title }}</h2>
+      <h2>联系方式</h2>
       <div class="contact-grid">
         <div class="contact-item">
           <strong>Email:</strong>
-          <a :href="'mailto:' + currentContent.contact.email">{{ currentContent.contact.email }}</a>
+          <a :href="'mailto:' + contact.email">{{ contact.email }}</a>
         </div>
         <div class="contact-item">
           <strong>GitHub:</strong>
-          <a :href="currentContent.contact.github" target="_blank" rel="noopener noreferrer">
-            {{ currentContent.contact.github.replace('https://github.com/', '') }}
+          <a :href="contact.github" target="_blank" rel="noopener noreferrer">
+            {{ contact.github.replace('https://github.com/', '') }}
           </a>
         </div>
       </div>
@@ -128,33 +211,36 @@ const formatDate = (date: string) => {
   gap: 0.5rem;
 }
 
+.info-item strong {
+  color: var(--vp-c-text-2);
+}
+
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .timeline-item {
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 1rem;
-  align-items: start;
 }
 
 .timeline-period {
-  font-weight: 600;
-  color: var(--vp-c-brand);
+  color: var(--vp-c-text-2);
+  font-weight: 500;
 }
 
 .timeline-content h3 {
-  margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--vp-c-text-1);
+  margin-bottom: 0.5rem;
 }
 
 .timeline-content p {
-  margin: 0.5rem 0 0;
   color: var(--vp-c-text-2);
+  margin: 0;
 }
 
 .skills-grid {
@@ -170,12 +256,13 @@ const formatDate = (date: string) => {
 }
 
 .skill-category ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .skill-category li {
+  color: var(--vp-c-text-2);
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   position: relative;
@@ -200,6 +287,10 @@ const formatDate = (date: string) => {
   gap: 0.5rem;
 }
 
+.contact-item strong {
+  color: var(--vp-c-text-2);
+}
+
 .contact-item a {
   color: var(--vp-c-brand);
   text-decoration: none;
@@ -220,10 +311,6 @@ const formatDate = (date: string) => {
 
   .timeline-period {
     margin-bottom: 0.5rem;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
   }
 }
 </style> 

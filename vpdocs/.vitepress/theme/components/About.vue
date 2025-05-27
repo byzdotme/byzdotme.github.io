@@ -1,14 +1,12 @@
----
-layout: doc
-title: 关于我
----
-
 <script setup>
-import About from '.vitepress/theme/components/About.vue'
+import Profile from './Profile.vue'
 </script>
 
 <template>
-  <About />
+  <div class="about-page">
+    <h1>关于我</h1>
+    <Profile />
+  </div>
 </template>
 
 <style scoped>
