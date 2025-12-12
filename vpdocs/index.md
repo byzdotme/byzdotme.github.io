@@ -1,28 +1,44 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
-layout: home
-title: Tony's Portfolio
-
-hero:
-  name: Tony Zhu
-  text: Java Backend Engineer
-  tagline: Passionate about software development and technology innovation
-  actions:
-    - theme: brand
-      text: About Me
-      link: /about
-    - theme: alt
-      text: View Projects
-      link: /projects
-
-features:
-  - title: Backend Development
-    details: Proficient in Java technology stack, including Spring Boot, MySQL, PostgreSQL, and other modern backend technologies.
-  - title: Frontend Development
-    details: Familiar with Vue.js ecosystem and modern web development practices.
-  - title: Full Stack Experience
-    details: Experience in building and maintaining full-stack applications with a focus on scalability and performance.
+title: Tony Zhu · 个人主页
 ---
 
-<Profile />
+# Tony Zhu
+资深技术专家 / 架构师 · 15 年
 
+> 核心价值：擅长在资源受限场景下，通过合理的技术决策推动业务稳定增长，并在团队层面提升交付效率与工程质量。
+
+## 关于我
+- 15 年后端 / 全栈经验，曾带队从 0 到 1 交付企业级产品。
+- 擅长平衡业务速度与架构质量，在复杂遗留系统中推进渐进式重构。
+- 关注工程效能、可观测性与团队协作，倡导用数据驱动决策。
+
+## 职业高光
+### 电商核心交易链路重构（Tech Lead）
+- 挑战：大促期间数据库连接池耗尽、耦合严重、监控缺失。
+- 行动：交易链路微服务化，消息队列削峰填谷，全链路监控与告警。
+- 结果：吞吐量提升 50 倍，99.99% 可用性，故障率下降 90%。
+
+### SaaS 平台插件化架构
+- 挑战：多大客户定制需求导致代码分叉、交付周期长。
+- 行动：设计插件化内核，核心与定制解耦；建立灰度与自动化回归。
+- 结果：交付效率提升 3 倍，定制周期从 2 周缩短至 3 天。
+
+## 技术栈与专长
+| 领域 | 关键词 |
+| :--- | :--- |
+| 架构设计 | 微服务 / 云原生（K8s），DDD，高并发 & 高可用 |
+| 后端 | Java / Go，Spring 体系，MySQL / PostgreSQL，Redis，Kafka，ES |
+| 工程效能 | CI/CD（Jenkins/GitLab），Docker，自动化测试，可观测性 |
+| 团队 | 敏捷落地，OKR 制定，规范与 Code Review，人才培养 |
+
+## 输出与分享
+- 技术博客 / 演讲：工程效能、可观测性、架构演进实践。
+- 开源贡献：欢迎访问 GitHub 主页查看近期项目。
+- 知识沉淀：注重可复用的决策记录与复盘。
+
+## 联系方式
+- Email：your-email@example.com
+- GitHub：<https://github.com/你的id>
+- LinkedIn：<https://linkedin.com/in/你的id>
+
+> 需要 PDF 版简历或交流合作，邮件联系即可。欢迎探讨高并发、工程效能与团队实践相关话题。
