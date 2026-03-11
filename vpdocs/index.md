@@ -1,28 +1,18 @@
----
-# https://vitepress.dev/reference/default-theme-home-page
-layout: home
-title: Tony's Portfolio
+# 朱柏洋
 
-hero:
-  name: Tony Zhu
-  text: Java Backend Engineer
-  tagline: Passionate about software development and technology innovation
-  actions:
-    - theme: brand
-      text: About Me
-      link: /about
-    - theme: alt
-      text: View Projects
-      link: /projects
+AI & 全栈程序员，15 年工程实战经验。
 
-features:
-  - title: Backend Development
-    details: Proficient in Java technology stack, including Spring Boot, MySQL, PostgreSQL, and other modern backend technologies.
-  - title: Frontend Development
-    details: Familiar with Vue.js ecosystem and modern web development practices.
-  - title: Full Stack Experience
-    details: Experience in building and maintaining full-stack applications with a focus on scalability and performance.
----
+**求职中**，目标岗位：资深后端 / 全栈 / 技术负责人（AI 方向优先）。
 
-<Profile />
+## 关于我
 
+- **职业**：AI 应用落地、全栈工程、架构演进、技术领导力
+- **状态**：持续学习、持续输出、对新技术保持好奇心和执行力
+- **性格**：ISTJ，重视承诺、细节和结果
+- **爱好**：羽毛球、跑步、游泳
+- **喜欢**：林丹、石宇奇、科比、库里、周杰伦、许嵩、金泰妍、IU、小喵（4岁超重英短银渐层）
+
+## 快速入口
+
+- [我的简历](./resume.md)
+- [随手记](./blog/)
