@@ -28,7 +28,7 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: pnpm
       - name: setup pages
         uses: actions/configure-pages@v5

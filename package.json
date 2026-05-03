@@ -12,12 +12,15 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "packageManager": "pnpm@10.33.2",
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   },
   "devDependencies": {
-    "@types/node": "^20.17.48",
+    "@types/node": "^24.24.0",
     "typescript": "^5.8.3",
-    "vitepress": "^1.6.3"
+    "vitepress": "^1.6.4"
   }
 }
