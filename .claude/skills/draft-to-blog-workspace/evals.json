@@ -1,0 +1,17 @@
+{
+  "skill_name": "draft-to-blog",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "帮我把 draft 中的 rag-deep-dive.md 转换成一篇可发布的文章",
+      "expected_output": "一篇结构清晰、风格与现有博客一致的 RAG 主题文章，包含 frontmatter、小节标题、小结和总结，更新 blog/index.md 添加链接",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "帮我把 draft 中 observability-notes 目录下的笔记整理成可发布的文章",
+      "expected_output": "从三篇零碎笔记中提炼出1-3篇结构清晰、风格一致的文章，包含 frontmatter、改正了原文中的错误（如 prometheus 拼写），更新 blog/index.md",
+      "files": []
+    }
+  ]
+}

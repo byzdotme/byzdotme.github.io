@@ -1,0 +1,41 @@
+{
+  "run": "eval-1-messy-notes-without_skill",
+  "expectations": [
+    {
+      "text": "Frontmatter \u5305\u542b title\u3001date\u3001category\u3001tags \u56db\u4e2a\u5b57\u6bb5",
+      "passed": true,
+      "evidence": "\u4e09\u7bc7\u6587\u7ae0 frontmatter \u5747\u5305\u542b\u5168\u90e8\u56db\u4e2a\u5b57\u6bb5"
+    },
+    {
+      "text": "\u7ea0\u6b63\u4e86 promethus \u2192 Prometheus \u7684\u5927\u5c0f\u5199\u548c\u62fc\u5199",
+      "passed": true,
+      "evidence": "\u4e09\u7bc7\u6587\u7ae0 0 \u5904\u9519\u8bef\u62fc\u5199\uff0cobservability-metrics.md \u4e2d 24 \u5904\u6b63\u786e\u4f7f\u7528"
+    },
+    {
+      "text": "VictoriaMetrics \u62fc\u5199\u6b63\u786e",
+      "passed": true,
+      "evidence": "observability-metrics.md \u4e2d 2 \u5904\u6b63\u786e\u62fc\u5199 VictoriaMetrics"
+    },
+    {
+      "text": "\u4ea7\u51fa\u6587\u7ae0\u7ecf\u8fc7\u91cd\u65b0\u7ec4\u7ec7\uff0c\u4e0d\u662f\u4e09\u7bc7\u539f\u6587\u7684\u673a\u68b0\u62fc\u63a5",
+      "passed": true,
+      "evidence": "\u4e09\u7bc7\u539f\u6587\u88ab\u6269\u5c55\u4e3a\u72ec\u7acb\u7684\u5b8c\u6574\u6587\u7ae0\uff0c\u6bcf\u7bc7\u589e\u52a0\u4e86\u80cc\u666f\u4ecb\u7ecd\u3001\u6280\u672f\u7ec6\u8282\u548c\u5de5\u7a0b\u5b9e\u8df5"
+    },
+    {
+      "text": "\u81f3\u5c11\u6709\u4e00\u7bc7\u6587\u7ae0\u5305\u542b ## \u5c0f\u8282\u548c **\u5c0f\u7ed3\uff1a**",
+      "passed": true,
+      "evidence": "\u4e09\u7bc7\u5747\u6709\uff08logging: 6/4, metrics: 7/5, tracing: 6/4\uff09"
+    },
+    {
+      "text": "blog/index.md \u4e2d\u6dfb\u52a0\u4e86\u65b0\u6587\u7ae0\u7684\u94fe\u63a5",
+      "passed": false,
+      "evidence": "\u65e0 skill \u5bf9\u7167\u7ec4\u6309\u6d4b\u8bd5\u8bbe\u5b9a\u672a\u4fee\u6539\u771f\u5b9e\u6587\u4ef6\uff0c\u6b64\u65ad\u8a00\u4e0d\u9002\u7528"
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.8333333333333334,
+    "passed": 5,
+    "failed": 1,
+    "total": 6
+  }
+}

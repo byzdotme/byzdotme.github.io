@@ -1,0 +1,34 @@
+=== Summary of Draft-to-Blog Conversion ===
+
+Date: 2026-05-03
+Source: draft/rag-deep-dive.md
+Output directory: .claude/skills/draft-to-blog-workspace/iteration-1/eval-0-single-draft/with_skill/outputs/
+
+=== Articles Created ===
+
+1. rag-full-stack-guide.md
+   - Title: RAG 全链路深度解析：从 Chunking 到生产落地的工程实践
+   - Covers: RAG fundamentals, chunking, embedding, vector storage/indexing, retrieval strategies (dense/sparse/hybrid), reranking, query rewriting (HyDE, Step-Back, Decomposition), evaluation metrics
+   - Category: AI/LLM (new)
+
+2. agentic-rag-and-production.md
+   - Title: 从经典 RAG 到 Agentic RAG：智能检索的进阶之路
+   - Covers: Advanced RAG patterns (Parent-Child, Self-RAG, CRAG, Graph RAG, Contextual Retrieval), Agentic RAG, multi-hop retrieval, production engineering (knowledge base management, latency/cost optimization, observability, fallback, security)
+   - Category: AI/LLM (new)
+
+=== Categories ===
+
+- New category "AI/LLM" was added to vpdocs/blog/index.md
+- Placed after "高可用架构" section
+
+=== Files Modified ===
+
+- vpdocs/blog/index.md: Added "AI/LLM" category section with links to both articles
+
+=== Key Decisions ===
+
+- Split the single comprehensive draft into two articles to match the existing blog's focused, single-topic style
+- Used conversational Chinese tone with section-ending summaries (小结：) and a final 总结/总结 section
+- Frontmatter format matches existing posts (title, date, category, tags)
+- No images needed (the draft had no image references)
+- No web research was required (all content appeared factually sound with no questionable claims)

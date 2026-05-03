@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>draft-to-blog Skill Review - Iteration 1</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a2e; color: #e0e0e0; line-height: 1.6; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+  h1 { color: #7c83ff; margin-bottom: 8px; }
+  h2 { color: #a0a4ff; margin: 24px 0 12px; border-bottom: 1px solid #333; padding-bottom: 4px; }
+  .benchmark { background: #16213e; border-radius: 8px; padding: 20px; margin: 16px 0; }
+  .benchmark table { width: 100%; border-collapse: collapse; }
+  .benchmark th { background: #0f3460; padding: 10px; text-align: left; }
+  .benchmark td { padding: 10px; border-bottom: 1px solid #333; }
+  .eval { background: #16213e; border-radius: 8px; padding: 20px; margin: 16px 0; }
+  .config { margin: 16px 0; border: 1px solid #333; border-radius: 8px; overflow: hidden; }
+  .config-header { background: #0f3460; padding: 12px 16px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+  .config-body { padding: 16px; }
+  .assertion { padding: 8px 16px; margin: 4px 0; border-radius: 4px; display: flex; align-items: center; gap: 10px; }
+  .assertion.pass { background: rgba(0, 200, 100, 0.1); }
+  .assertion.fail { background: rgba(255, 80, 80, 0.1); }
+  .assertion .icon { font-size: 18px; }
+  .assertion .text { flex: 1; }
+  .assertion .evidence { font-size: 0.85em; color: #888; font-style: italic; }
+  .pass-rate { font-size: 1.2em; font-weight: bold; }
+  .pass-rate.good { color: #4caf50; }
+  .summary-stats { display: flex; gap: 20px; flex-wrap: wrap; margin: 12px 0; }
+  .stat { background: #1a1a2e; padding: 12px 20px; border-radius: 6px; min-width: 100px; }
+  .stat-label { font-size: 0.8em; color: #888; }
+  .stat-value { font-size: 1.4em; font-weight: bold; }
+  .article-preview { background: #1a1a2e; border-radius: 6px; padding: 16px; margin: 8px 0; max-height: 400px; overflow-y: auto; }
+  .article-preview pre { white-space: pre-wrap; font-family: 'SF Mono', Monaco, monospace; font-size: 0.85em; line-height: 1.5; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; }
+  .badge.ok { background: #4caf50; color: #fff; }
+  .badge.warn { background: #ff9800; color: #fff; }
+  .badge.err { background: #f44336; color: #fff; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>draft-to-blog Skill — Iteration 1</h1>
+
+<div class="benchmark">
+  <h2>基准对比</h2>
+  <table>
+    <tr><th>指标</th><th>With Skill</th><th>Without Skill</th><th>差异</th></tr>
+    <tr>
+      <td>通过率</td>
+      <td class="pass-rate good">100%</td>
+      <td class="pass-rate">85%</td>
+      <td style="color:#4caf50">+15%</td>
+    </tr>
+    <tr>
+      <td>时间</td>
+      <td>390s *</td>
+      <td>153s</td>
+      <td style="color:#888">+237s</td>
+    </tr>
+    <tr>
+      <td>Token 用量</td>
+      <td>35,000</td>
+      <td>36,486</td>
+      <td style="color:#4caf50">-1,486</td>
+    </tr>
+  </table>
+  <p style="color:#888;font-size:0.85em;margin-top:8px">* With-skill 时间包含 agent 超时（600s watchdog），实际工作时间约 60s。时间数据不可靠。</p>
+</div>
+
+<h2>Eval 0: RAG 单篇草稿转换</h2>
+<div class="eval">
+  <p><strong>任务：</strong>帮我把 draft 中的 rag-deep-dive.md 转换成一篇可发布的文章</p>
+
+  <div class="config">
+    <div class="config-header">
+      <span>With Skill</span>
+      <span class="badge ok">7/7 通过</span>
+    </div>
+    <div class="config-body">
+      <div class="summary-stats">
+        <div class="stat"><div class="stat-label">产出</div><div class="stat-value">2 篇</div></div>
+        <div class="stat"><div class="stat-label">时间</div><div class="stat-value">~660s</div></div>
+        <div class="stat"><div class="stat-label">Token</div><div class="stat-value">45K</div></div>
+      </div>
+      <p><strong>策略：</strong>将 15 章面试笔记拆分为两篇聚焦文章——「RAG 全链路深度解析」+「从经典 RAG 到 Agentic RAG」</p>
+      <p><strong>产出文件：</strong>rag-full-stack-guide.md, agentic-rag-and-production.md</p>
+      <p><strong>索引更新：</strong>✅ 新增 AI/LLM 分类，含两篇文章链接</p>
+      <div class="article-preview"><pre>---
+title: RAG 全链路深度解析：从 Chunking 到生产落地的工程实践
+date: 2026-05-03
+category: AI/LLM
+tags: [RAG, 检索增强生成, Embedding, 向量数据库, 大模型]
+---
+
+# RAG 全链路深度解析：从 Chunking 到生产落地的工程实践
+
+如果你问一个 LLM "公司上个季度的营收是多少"，它会理直气壮地编一个数字出来...</pre></div>
+    </div>
+  </div>
+
+  <div class="config">
+    <div class="config-header">
+      <span>Without Skill</span>
+      <span class="badge warn">6/7 通过</span>
+    </div>
+    <div class="config-body">
+      <div class="summary-stats">
+        <div class="stat"><div class="stat-label">产出</div><div class="stat-value">1 篇</div></div>
+        <div class="stat"><div class="stat-label">时间</div><div class="stat-value">113s</div></div>
+        <div class="stat"><div class="stat-label">Token</div><div class="stat-value">38K</div></div>
+      </div>
+      <p><strong>策略：</strong>将全部内容压缩为一篇 246 行的长文章</p>
+      <p><strong>产出文件：</strong>rag-deep-dive.md</p>
+      <p><strong>索引更新：</strong>❌ 未修改（测试设定限制）</p>
+      <div class="article-preview"><pre>---
+title: RAG 深度解析：从检索增强到 Agentic 架构的工程实践
+date: 2026-05-03
+category: 大模型技术
+tags: [RAG, LLM, 检索增强生成, Agent, 向量检索]
+---
+
+# RAG 深度解析：从检索增强到 Agentic 架构的工程实践</pre></div>
+    </div>
+  </div>
+</div>
+
+<h2>Eval 1: 零碎可观测性笔记转换</h2>
+<div class="eval">
+  <p><strong>任务：</strong>帮我把 draft 中 observability-notes 目录下的笔记整理成可发布的文章</p>
+
+  <div class="config">
+    <div class="config-header">
+      <span>With Skill</span>
+      <span class="badge ok">6/6 通过</span>
+    </div>
+    <div class="config-body">
+      <div class="summary-stats">
+        <div class="stat"><div class="stat-label">产出</div><div class="stat-value">1 篇</div></div>
+        <div class="stat"><div class="stat-label">时间</div><div class="stat-value">~120s</div></div>
+        <div class="stat"><div class="stat-label">Token</div><div class="stat-value">25K</div></div>
+      </div>
+      <p><strong>策略：</strong>将三篇零散笔记整合为「可观测性三支柱」一篇完整文章，按 Metrics→Logging→Tracing 逻辑主线组织</p>
+      <p><strong>错误修正：</strong>✅ Prometheus 拼写、✅ VictoriaMetrics（选择不提及不确定的内容）、✅ 删除"别再用 Jaeger"的绝对论断</p>
+      <p><strong>产出文件：</strong>observability-three-pillars.md</p>
+      <p><strong>索引更新：</strong>✅ 新增 可观测性 分类</p>
+    </div>
+  </div>
+
+  <div class="config">
+    <div class="config-header">
+      <span>Without Skill</span>
+      <span class="badge warn">5/6 通过</span>
+    </div>
+    <div class="config-body">
+      <div class="summary-stats">
+        <div class="stat"><div class="stat-label">产出</div><div class="stat-value">3 篇</div></div>
+        <div class="stat"><div class="stat-label">时间</div><div class="stat-value">192s</div></div>
+        <div class="stat"><div class="stat-label">Token</div><div class="stat-value">35K</div></div>
+      </div>
+      <p><strong>策略：</strong>三篇草稿各自扩展为独立文章——日志篇、指标篇、追踪篇</p>
+      <p><strong>错误修正：</strong>✅ Prometheus 拼写、✅ VictoriaMetrics 正确拼写、✅ 删除错误观点"OTel 只支持 HTTP"</p>
+      <p><strong>产出文件：</strong>observability-logging.md, observability-metrics.md, observability-tracing.md</p>
+      <p><strong>索引更新：</strong>❌ 未修改（测试设定限制）</p>
+    </div>
+  </div>
+</div>
+
+<h2>分析</h2>
+<div class="benchmark">
+  <ul style="margin-left:20px;line-height:2">
+    <li><strong>skill 的核心价值在于"流程纪律"：</strong>强制先读现有博客学习风格 → 展示计划 → 写文章 → 更新索引。without_skill 也会写文章但缺少系统流程。</li>
+    <li><strong>内容组织策略不同：</strong>with_skill 倾向于更激进的重新组织（拆分/合并），without_skill 倾向于保持原有分组。</li>
+    <li><strong>索引更新是 skill 的关键差异点：</strong>without_skill 不会主动更新 index.md，而 skill 将其作为完整工作流的一部分。</li>
+    <li><strong>错误修正两者都做得不错：</strong>拼写错误、不准确的说法在两组中都被修正了。</li>
+    <li><strong>局限：</strong>子 agent 超时问题影响了对 skill 效率的测量。需要优化 skill 的步骤数或使用更强大的 agent 配置。</li>
+  </ul>
+</div>
+
+</div>
+</body>
+</html>

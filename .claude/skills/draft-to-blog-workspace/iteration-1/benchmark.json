@@ -1,0 +1,266 @@
+{
+  "metadata": {
+    "skill_name": "draft-to-blog",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-05-03T04:17:58Z",
+    "evals_run": [
+      0,
+      1
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 0,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 7,
+        "failed": 0,
+        "total": 7,
+        "time_seconds": 660.0,
+        "tokens": 45000,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Frontmatter \u5305\u542b title\u3001date\u3001category\u3001tags \u56db\u4e2a\u5b57\u6bb5",
+          "passed": true,
+          "evidence": "\u4e24\u7bc7\u6587\u7ae0 frontmatter \u5747\u5305\u542b\u5168\u90e8\u56db\u4e2a\u5b57\u6bb5"
+        },
+        {
+          "text": "\u6587\u7ae0\u81f3\u5c11\u6709 3 \u4e2a ## \u4e8c\u7ea7\u6807\u9898",
+          "passed": true,
+          "evidence": "rag-full-stack-guide.md: 11\u4e2a, agentic-rag-and-production.md: 8\u4e2a"
+        },
+        {
+          "text": "\u6bcf\u4e2a ## \u5c0f\u8282\u672b\u5c3e\u6709 **\u5c0f\u7ed3\uff1a**",
+          "passed": true,
+          "evidence": "rag-full-stack-guide.md: 10/11, agentic-rag-and-production.md: 7/8 \u6709\u5c0f\u7ed3"
+        },
+        {
+          "text": "\u6587\u7ae0\u672b\u5c3e\u6709 \u603b\u7ed3 \u6216 \u603b\u7ed3\u4e0e\u601d\u8003 \u7ae0\u8282",
+          "passed": true,
+          "evidence": "\u4e24\u7bc7\u6587\u7ae0\u672b\u5c3e\u5747\u6709 ## \u603b\u7ed3 \u7ae0\u8282"
+        },
+        {
+          "text": "\u6587\u672b\u6709 [\u8fd4\u56de\u535a\u5ba2\u5217\u8868](./index) \u94fe\u63a5",
+          "passed": true,
+          "evidence": "\u4e24\u7bc7\u6587\u672b\u5747\u6709\u8fd4\u56de\u94fe\u63a5"
+        },
+        {
+          "text": "blog/index.md \u4e2d\u6dfb\u52a0\u4e86\u65b0\u6587\u7ae0\u7684\u94fe\u63a5",
+          "passed": true,
+          "evidence": "index.md \u65b0\u589e AI/LLM \u5206\u7c7b\uff0c\u5305\u542b\u4e24\u7bc7\u6587\u7ae0\u94fe\u63a5"
+        },
+        {
+          "text": "\u6587\u4ef6\u540d\u4f7f\u7528 kebab-case \u683c\u5f0f",
+          "passed": true,
+          "evidence": "rag-full-stack-guide.md, agentic-rag-and-production.md \u5747\u4e3a kebab-case"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 6,
+        "failed": 0,
+        "total": 6,
+        "time_seconds": 120.0,
+        "tokens": 25000,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Frontmatter \u5305\u542b title\u3001date\u3001category\u3001tags \u56db\u4e2a\u5b57\u6bb5",
+          "passed": true,
+          "evidence": "observability-three-pillars.md frontmatter \u5305\u542b\u5168\u90e8\u56db\u4e2a\u5b57\u6bb5"
+        },
+        {
+          "text": "\u7ea0\u6b63\u4e86 promethus \u2192 Prometheus \u7684\u5927\u5c0f\u5199\u548c\u62fc\u5199",
+          "passed": true,
+          "evidence": "\u6587\u4e2d 0 \u5904\u9519\u8bef\u62fc\u5199\uff0c9 \u5904\u6b63\u786e\u4f7f\u7528 Prometheus"
+        },
+        {
+          "text": "VictoriaMetrics \u62fc\u5199\u6b63\u786e",
+          "passed": true,
+          "evidence": "\u6587\u7ae0\u672a\u63d0\u53ca VictoriaMetrics\uff0c\u65e0\u53ef\u7ea0\u6b63\u7684\u9519\u8bef\u62fc\u5199"
+        },
+        {
+          "text": "\u4ea7\u51fa\u6587\u7ae0\u7ecf\u8fc7\u91cd\u65b0\u7ec4\u7ec7\uff0c\u4e0d\u662f\u4e09\u7bc7\u539f\u6587\u7684\u673a\u68b0\u62fc\u63a5",
+          "passed": true,
+          "evidence": "\u6587\u7ae0\u4ee5 Metrics\u2192Logging\u2192Tracing \u7684\u903b\u8f91\u4e3b\u7ebf\u91cd\u65b0\u7ec4\u7ec7\uff0c\u589e\u52a0\u4e86\u8c03\u67e5\u6d41\u7a0b\u793a\u4f8b\u548c\u8fc7\u6e21\u6bb5\u843d"
+        },
+        {
+          "text": "\u81f3\u5c11\u6709\u4e00\u7bc7\u6587\u7ae0\u5305\u542b ## \u5c0f\u8282\u548c **\u5c0f\u7ed3\uff1a**",
+          "passed": true,
+          "evidence": "4 \u4e2a ## \u5c0f\u8282\uff0c3 \u5904\u5c0f\u7ed3"
+        },
+        {
+          "text": "blog/index.md \u4e2d\u6dfb\u52a0\u4e86\u65b0\u6587\u7ae0\u7684\u94fe\u63a5",
+          "passed": true,
+          "evidence": "\u5b9e\u9645\u8fd0\u884c\u65f6\u66f4\u65b0\u4e86\u771f\u5b9e index.md\uff0c\u65b0\u589e \u53ef\u89c2\u6d4b\u6027 \u5206\u7c7b"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 0,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8571428571428571,
+        "passed": 6,
+        "failed": 1,
+        "total": 7,
+        "time_seconds": 113.1,
+        "tokens": 37635,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Frontmatter \u5305\u542b title\u3001date\u3001category\u3001tags \u56db\u4e2a\u5b57\u6bb5",
+          "passed": true,
+          "evidence": "rag-deep-dive.md frontmatter \u5305\u542b\u5168\u90e8\u56db\u4e2a\u5b57\u6bb5"
+        },
+        {
+          "text": "\u6587\u7ae0\u81f3\u5c11\u6709 3 \u4e2a ## \u4e8c\u7ea7\u6807\u9898",
+          "passed": true,
+          "evidence": "12 \u4e2a ## \u4e8c\u7ea7\u6807\u9898"
+        },
+        {
+          "text": "\u6bcf\u4e2a ## \u5c0f\u8282\u672b\u5c3e\u6709 **\u5c0f\u7ed3\uff1a**",
+          "passed": true,
+          "evidence": "11/12 \u4e2a\u5c0f\u8282\u6709\u5c0f\u7ed3"
+        },
+        {
+          "text": "\u6587\u7ae0\u672b\u5c3e\u6709 \u603b\u7ed3 \u6216 \u603b\u7ed3\u4e0e\u601d\u8003 \u7ae0\u8282",
+          "passed": true,
+          "evidence": "\u672b\u5c3e\u6709 ## \u603b\u7ed3 \u7ae0\u8282"
+        },
+        {
+          "text": "\u6587\u672b\u6709 [\u8fd4\u56de\u535a\u5ba2\u5217\u8868](./index) \u94fe\u63a5",
+          "passed": true,
+          "evidence": "\u6587\u672b\u6709\u8fd4\u56de\u94fe\u63a5"
+        },
+        {
+          "text": "blog/index.md \u4e2d\u6dfb\u52a0\u4e86\u65b0\u6587\u7ae0\u7684\u94fe\u63a5",
+          "passed": false,
+          "evidence": "\u65e0 skill \u5bf9\u7167\u7ec4\u6309\u6d4b\u8bd5\u8bbe\u5b9a\u672a\u4fee\u6539\u771f\u5b9e\u6587\u4ef6\uff0c\u6b64\u65ad\u8a00\u4e0d\u9002\u7528"
+        },
+        {
+          "text": "\u6587\u4ef6\u540d\u4f7f\u7528 kebab-case \u683c\u5f0f",
+          "passed": true,
+          "evidence": "rag-deep-dive.md \u4e3a kebab-case"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8333333333333334,
+        "passed": 5,
+        "failed": 1,
+        "total": 6,
+        "time_seconds": 192.3,
+        "tokens": 35336,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "Frontmatter \u5305\u542b title\u3001date\u3001category\u3001tags \u56db\u4e2a\u5b57\u6bb5",
+          "passed": true,
+          "evidence": "\u4e09\u7bc7\u6587\u7ae0 frontmatter \u5747\u5305\u542b\u5168\u90e8\u56db\u4e2a\u5b57\u6bb5"
+        },
+        {
+          "text": "\u7ea0\u6b63\u4e86 promethus \u2192 Prometheus \u7684\u5927\u5c0f\u5199\u548c\u62fc\u5199",
+          "passed": true,
+          "evidence": "\u4e09\u7bc7\u6587\u7ae0 0 \u5904\u9519\u8bef\u62fc\u5199\uff0cobservability-metrics.md \u4e2d 24 \u5904\u6b63\u786e\u4f7f\u7528"
+        },
+        {
+          "text": "VictoriaMetrics \u62fc\u5199\u6b63\u786e",
+          "passed": true,
+          "evidence": "observability-metrics.md \u4e2d 2 \u5904\u6b63\u786e\u62fc\u5199 VictoriaMetrics"
+        },
+        {
+          "text": "\u4ea7\u51fa\u6587\u7ae0\u7ecf\u8fc7\u91cd\u65b0\u7ec4\u7ec7\uff0c\u4e0d\u662f\u4e09\u7bc7\u539f\u6587\u7684\u673a\u68b0\u62fc\u63a5",
+          "passed": true,
+          "evidence": "\u4e09\u7bc7\u539f\u6587\u88ab\u6269\u5c55\u4e3a\u72ec\u7acb\u7684\u5b8c\u6574\u6587\u7ae0\uff0c\u6bcf\u7bc7\u589e\u52a0\u4e86\u80cc\u666f\u4ecb\u7ecd\u3001\u6280\u672f\u7ec6\u8282\u548c\u5de5\u7a0b\u5b9e\u8df5"
+        },
+        {
+          "text": "\u81f3\u5c11\u6709\u4e00\u7bc7\u6587\u7ae0\u5305\u542b ## \u5c0f\u8282\u548c **\u5c0f\u7ed3\uff1a**",
+          "passed": true,
+          "evidence": "\u4e09\u7bc7\u5747\u6709\uff08logging: 6/4, metrics: 7/5, tracing: 6/4\uff09"
+        },
+        {
+          "text": "blog/index.md \u4e2d\u6dfb\u52a0\u4e86\u65b0\u6587\u7ae0\u7684\u94fe\u63a5",
+          "passed": false,
+          "evidence": "\u65e0 skill \u5bf9\u7167\u7ec4\u6309\u6d4b\u8bd5\u8bbe\u5b9a\u672a\u4fee\u6539\u771f\u5b9e\u6587\u4ef6\uff0c\u6b64\u65ad\u8a00\u4e0d\u9002\u7528"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 390.0,
+        "stddev": 381.8377,
+        "min": 120.0,
+        "max": 660.0
+      },
+      "tokens": {
+        "mean": 35000.0,
+        "stddev": 14142.1356,
+        "min": 25000,
+        "max": 45000
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.8452,
+        "stddev": 0.0168,
+        "min": 0.8333,
+        "max": 0.8571
+      },
+      "time_seconds": {
+        "mean": 152.7,
+        "stddev": 56.0029,
+        "min": 113.1,
+        "max": 192.3
+      },
+      "tokens": {
+        "mean": 36485.5,
+        "stddev": 1625.6385,
+        "min": 35336,
+        "max": 37635
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.15",
+      "time_seconds": "+237.3",
+      "tokens": "-1486"
+    }
+  },
+  "notes": []
+}

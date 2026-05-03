@@ -26,9 +26,5 @@
 
 - [RAG 全链路深度解析：从 Chunking 到生产落地的工程实践](./rag-full-stack-guide)
 - [从经典 RAG 到 Agentic RAG：智能检索的进阶之路](./agentic-rag-and-production)
-- [Claude Code 实战指北：从命令到工作流的效率密码](./claude-code-workflow-guide)
-- [Claude Code 可编程生态：Skills、MCP 与 Hook 体系全解](./claude-code-ecosystem)
-- [让 Claude Code 读懂你的代码库：CLAUDE.md 分层与团队落地实践](./claude-code-team-adoption)
-- [AI Agent 的工程化哲学：Harness 设计的核心原则](./ai-agent-harness-engineering)
 
 [返回首页](../index)

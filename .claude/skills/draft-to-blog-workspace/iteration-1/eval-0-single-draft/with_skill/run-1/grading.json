@@ -1,0 +1,46 @@
+{
+  "run": "eval-0-single-draft-with_skill",
+  "expectations": [
+    {
+      "text": "Frontmatter \u5305\u542b title\u3001date\u3001category\u3001tags \u56db\u4e2a\u5b57\u6bb5",
+      "passed": true,
+      "evidence": "\u4e24\u7bc7\u6587\u7ae0 frontmatter \u5747\u5305\u542b\u5168\u90e8\u56db\u4e2a\u5b57\u6bb5"
+    },
+    {
+      "text": "\u6587\u7ae0\u81f3\u5c11\u6709 3 \u4e2a ## \u4e8c\u7ea7\u6807\u9898",
+      "passed": true,
+      "evidence": "rag-full-stack-guide.md: 11\u4e2a, agentic-rag-and-production.md: 8\u4e2a"
+    },
+    {
+      "text": "\u6bcf\u4e2a ## \u5c0f\u8282\u672b\u5c3e\u6709 **\u5c0f\u7ed3\uff1a**",
+      "passed": true,
+      "evidence": "rag-full-stack-guide.md: 10/11, agentic-rag-and-production.md: 7/8 \u6709\u5c0f\u7ed3"
+    },
+    {
+      "text": "\u6587\u7ae0\u672b\u5c3e\u6709 \u603b\u7ed3 \u6216 \u603b\u7ed3\u4e0e\u601d\u8003 \u7ae0\u8282",
+      "passed": true,
+      "evidence": "\u4e24\u7bc7\u6587\u7ae0\u672b\u5c3e\u5747\u6709 ## \u603b\u7ed3 \u7ae0\u8282"
+    },
+    {
+      "text": "\u6587\u672b\u6709 [\u8fd4\u56de\u535a\u5ba2\u5217\u8868](./index) \u94fe\u63a5",
+      "passed": true,
+      "evidence": "\u4e24\u7bc7\u6587\u672b\u5747\u6709\u8fd4\u56de\u94fe\u63a5"
+    },
+    {
+      "text": "blog/index.md \u4e2d\u6dfb\u52a0\u4e86\u65b0\u6587\u7ae0\u7684\u94fe\u63a5",
+      "passed": true,
+      "evidence": "index.md \u65b0\u589e AI/LLM \u5206\u7c7b\uff0c\u5305\u542b\u4e24\u7bc7\u6587\u7ae0\u94fe\u63a5"
+    },
+    {
+      "text": "\u6587\u4ef6\u540d\u4f7f\u7528 kebab-case \u683c\u5f0f",
+      "passed": true,
+      "evidence": "rag-full-stack-guide.md, agentic-rag-and-production.md \u5747\u4e3a kebab-case"
+    }
+  ],
+  "summary": {
+    "pass_rate": 1.0,
+    "passed": 7,
+    "failed": 0,
+    "total": 7
+  }
+}
