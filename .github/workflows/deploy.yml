@@ -35,11 +35,11 @@ jobs:
       - name: clean install
         run: pnpm install --frozen-lockfile
       - name: build
-        run: pnpm run docs:build
+        run: pnpm run build
       - name: upload
         uses: actions/upload-pages-artifact@v3
         with:
-          path: vpdocs/.vitepress/dist
+          path: .output/public
 
   deploy:
     environment:

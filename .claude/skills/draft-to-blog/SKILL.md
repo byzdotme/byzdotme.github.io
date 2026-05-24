@@ -1,12 +1,12 @@
 ---
 name: draft-to-blog
 description: |
-  Convert messy reading notes and drafts from `./draft/` into polished, publishable blog articles for a VitePress-based personal site. Use this skill whenever the user mentions publishing drafts, converting notes to blog posts, processing reading notes, or any task involving turning `./draft/` content into articles in `./vpdocs/blog/`. This includes: "publish my notes", "turn draft X into an article", "process the draft directory", "convert my reading notes", or any request that involves moving content from draft to blog.
+  Convert messy reading notes and drafts from `./draft/` into polished, publishable blog articles for a Nuxt Content-based personal site. Use this skill whenever the user mentions publishing drafts, converting notes to blog posts, processing reading notes, or any task involving turning `./draft/` content into articles in `./content/blog/`. This includes: "publish my notes", "turn draft X into an article", "process the draft directory", "convert my reading notes", or any request that involves moving content from draft to blog.
 ---
 
 # Draft to Blog
 
-Convert reading notes from `./draft/` into publishable VitePress blog articles.
+Convert reading notes from `./draft/` into publishable Nuxt Content blog articles.
 
 ## Workflow
 
@@ -21,14 +21,12 @@ Read the specified files/directories first. If the user's specification is vague
 
 ### Step 2: Read existing blog posts to internalize the style
 
-Before writing, read at least 2-3 existing blog posts from `./vpdocs/blog/` (not index.md) to internalize:
+Before writing, read at least 2-3 existing blog posts from `./content/blog/` to internalize:
 - The frontmatter format (title, date, category, tags)
 - The narrative voice: conversational yet technically precise Chinese, uses metaphors to explain concepts
 - The structural pattern: `##` sections, each ending with **小结：**, article ending with **总结** or **总结与思考**
-- The footer link: `[返回博客列表](./index)`
+- The footer link: `[返回博客列表](/blog/)`
 - File naming: kebab-case
-
-Also read `./vpdocs/blog/index.md` to understand current category groupings.
 
 ### Step 3: Analyze content and plan articles
 
@@ -41,7 +39,7 @@ Read ALL the draft files in scope thoroughly. Then analyze:
 Present a plan to the user before writing. The plan should list:
 - How many articles will be produced
 - Proposed title for each
-- Proposed category (use existing categories from index.md when they fit; propose new ones like `AI/LLM` when needed)
+- Proposed category（参考现有分类如 AI/LLM、支付架构、Java 底层、高可用架构，需要时可新建）
 - Which draft files feed into each article
 
 Example plan format:
@@ -70,7 +68,7 @@ For any factual claims that seem questionable:
 
 ### Step 5: Write the articles
 
-Write each article as a markdown file in `./vpdocs/blog/`. Follow these rules strictly:
+Write each article as a markdown file in `./content/blog/`. Follow these rules strictly:
 
 **Frontmatter:**
 ```yaml
@@ -106,7 +104,7 @@ tags: [标签1, 标签2]
 
 **Footer:**
 ```
-[返回博客列表](./index)
+[返回博客列表](/blog/)
 ```
 
 **File naming:** kebab-case, no date prefix. E.g., `rag-full-stack-guide.md`.
@@ -114,25 +112,17 @@ tags: [标签1, 标签2]
 ### Step 6: Handle images
 
 If any draft references images that exist alongside the draft files:
-1. Create a corresponding directory under `./vpdocs/blog/` if needed (or use a shared `./vpdocs/public/` directory)
-2. Copy the images there
-3. Update references in the article to point to the new location
+1. Copy the images to `./public/images/`（Nuxt 构建时自动复制到输出目录）
+2. Update references in the article to point to `/images/filename.ext`
 
 If images are referenced by URL (not local files), keep the URLs as-is.
 
-### Step 7: Update the blog index
+### Step 7: No manual index update needed
 
-Update `./vpdocs/blog/index.md`:
-
-1. If the article's category already exists, add the link under that category's list.
-2. If it's a new category, create a new `###` section for it at the appropriate position.
-3. Link format: `- [文章标题](./filename-without-md-extension)`
-
-Keep the existing category order. Insert new categories where they logically fit.
+博客目录由 `pages/blog/index.vue` 通过 `queryCollection('blog')` 自动生成，无需手动维护。新文章放在 `content/blog/` 下后，构建时自动被扫描并出现在目录页中。
 
 ### Step 8: Final report
 
 After all changes, report:
 - Which articles were created (with file paths)
-- Which categories were updated or added
 - Any images that were copied

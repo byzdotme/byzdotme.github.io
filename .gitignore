@@ -1,9 +1,7 @@
 draft
 node_modules
-package-lock.json
-vpdocs/.vitepress/cache
-vpdocs/.vitepress/temp
-vpdocs/.vitepress/dist
-CNAME
+dist
+.output
 .temp
+.nuxt
 .DS_Store

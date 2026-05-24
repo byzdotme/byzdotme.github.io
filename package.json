@@ -2,25 +2,33 @@
   "name": "byzdotme",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev vpdocs",
-    "docs:build": "vitepress build vpdocs",
-    "docs:preview": "vitepress preview vpdocs"
+    "dev": "nuxt dev",
+    "build": "nuxt generate",
+    "preview": "nuxt preview",
+    "docs:dev": "nuxt dev",
+    "docs:build": "nuxt generate",
+    "docs:preview": "nuxt preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "packageManager": "pnpm@10.33.2",
+  "devDependencies": {
+    "@nuxt/content": "^3",
+    "@nuxtjs/tailwindcss": "^6",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^24",
+    "nuxt": "^3",
+    "typescript": "^6"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.10.0",
+    "motion": "^12",
+    "zod": "^4.4.3"
+  },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
       "esbuild"
     ]
-  },
-  "devDependencies": {
-    "@types/node": "^24",
-    "typescript": "^6",
-    "vitepress": "^1.6.4"
   }
 }

@@ -199,4 +199,4 @@ Harness Engineering 不是什么神秘知识，它就是把这些工程常识搬
 
 Claude Code、Cursor、Devin 这些产品真正的护城河不在模型层，在 Harness 层。而理解了这九条原则，你就拿到了自己搭建生产级 Agent 的蓝图。
 
-[返回博客列表](./index)
+[返回博客列表](/blog/)

@@ -1,32 +1,49 @@
 ## 项目概述
 
-基于 VitePress 的个人网站，内容包含个人简历和博客文章，通过 GitHub Actions 部署到 GitHub Pages（域名 `byz.me`）。
+基于 Nuxt 3 + Nuxt Content v3 的个人网站，包含首页、博客和简历，通过 GitHub Actions 部署到 GitHub Pages（域名 `byz.me`）。
 
 ## 常用命令
 
 ```bash
-pnpm run docs:dev      # 本地开发服务器
-pnpm run docs:build    # 构建生产版本
-pnpm run docs:preview  # 本地预览构建结果
-pnpm install           # 安装依赖
+pnpm run dev      # 本地开发服务器（热更新）
+pnpm run build    # 静态构建（nuxi generate）
+pnpm run preview  # 本地预览构建结果（npx serve .output/public）
+pnpm install      # 安装依赖
 ```
-
-开发时使用 `pnpm run docs:dev`，内容热更新。
 
 ## 架构
 
-- **内容目录**: 
-  - `vpdocs/` — VitePress 文档根目录
-    - `index.md` — 首页（个人信息、入口链接）
-    - `resume.md` — 简历页
-    - `blog/` — 博客文章（Markdown 文件）
-  - `draft/` — 存在本地的读书笔记草稿，只有根据草稿发布文章的时候才需要阅读对应文档
-- **配置**: `vpdocs/.vitepress/config.ts` — VitePress 配置，站点标题、导航等
-- **部署**: `.github/workflows/deploy.yml` — main 分支 push 触发，构建输出到 `vpdocs/.vitepress/dist`，自动部署到 GitHub Pages
-- **Node 版本**: 20（见 `.nvmrc`）
+- **框架**: Nuxt 3 + Nuxt Content v3 + Tailwind CSS + Motion One
+- **内容目录**:
+  - `content/blog/` — 博客文章（Markdown，自动扫描生成目录）
+  - `content/resume.md` — 简历
+  - `draft/` — 读书笔记草稿，发布时才需要关注
+- **页面**: `pages/`（基于文件路由）
+  - `index.vue` — 首页（自定义 Vue 组件）
+  - `blog/index.vue` — 博客目录（构建时自动扫描 content/blog/，按分类分组）
+  - `blog/[...slug].vue` — 文章详情
+  - `resume.vue` — 简历页
+- **首页组件**: `components/`（HeroSection、SkillCloud、FeaturedPosts、ProjectCards、SocialLinks、SiteFooter）
+- **配置**:
+  - `nuxt.config.ts` — Nuxt 主配置（模块、SSG、预渲染路由）
+  - `content.config.ts` — 内容集合 schema（blog、resume）
+  - `tailwind.config.ts` — Tailwind CSS 配置（品牌色、typography 插件）
+- **部署**: `.github/workflows/deploy.yml` — main 分支 push 触发，`nuxi generate` 构建到 `.output/public`，自动部署到 GitHub Pages
+- **Node 版本**: 24（见 `.nvmrc`）
 
-## 添加新页面
+## 添加新博客文章
 
-1. 在 `vpdocs/` 下创建 `.md` 文件
-2. 如需出现在导航栏，在 `vpdocs/.vitepress/config.ts` 的 `themeConfig.nav` 中添加链接
-3. push 到 main 分支后会自动部署
+1. 在 `content/blog/` 下创建 `.md` 文件，需包含 frontmatter：
+   ```yaml
+   ---
+   title: 文章标题
+   date: YYYY-MM-DD
+   category: 分类名
+   tags: [标签1, 标签2]
+   ---
+   ```
+2. push 到 main 分支后自动部署（博客目录自动更新，无需手动维护）
+
+## 自定义域名为 CNAME
+
+`public/CNAME` 包含域名 `byz.me`，构建时自动复制到 `.output/public/`。
