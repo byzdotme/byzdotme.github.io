@@ -1,0 +1,6 @@
+{
+  "total_tokens": 45000,
+  "duration_ms": 660000,
+  "total_duration_seconds": 660.0,
+  "note": "Agent stalled at 600s watchdog after completing work; tokens and duration are estimates"
+}

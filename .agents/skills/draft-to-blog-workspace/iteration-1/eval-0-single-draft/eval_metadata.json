@@ -1,0 +1,42 @@
+{
+  "eval_id": 0,
+  "eval_name": "single-draft-conversion",
+  "prompt": "帮我把 draft 中的 rag-deep-dive.md 转换成一篇可发布的文章",
+  "assertions": [
+    {
+      "id": "frontmatter-complete",
+      "description": "Frontmatter 包含 title、date、category、tags 四个字段",
+      "check": "script"
+    },
+    {
+      "id": "has-sections",
+      "description": "文章至少有 3 个 ## 二级标题",
+      "check": "grep"
+    },
+    {
+      "id": "has-sub-summaries",
+      "description": "每个 ## 小节末尾有 **小结：**",
+      "check": "grep"
+    },
+    {
+      "id": "has-final-summary",
+      "description": "文章末尾有 总结 或 总结与思考 章节",
+      "check": "grep"
+    },
+    {
+      "id": "has-return-link",
+      "description": "文末有 [返回博客列表](./index) 链接",
+      "check": "grep"
+    },
+    {
+      "id": "index-updated",
+      "description": "blog/index.md 中添加了新文章的链接",
+      "check": "diff"
+    },
+    {
+      "id": "kebab-case-filename",
+      "description": "文件名使用 kebab-case 格式",
+      "check": "regex"
+    }
+  ]
+}

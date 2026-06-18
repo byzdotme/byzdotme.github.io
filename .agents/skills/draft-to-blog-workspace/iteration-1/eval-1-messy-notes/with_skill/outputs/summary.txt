@@ -1,0 +1,33 @@
+=== Summary of Draft-to-Blog Conversion ===
+
+Date: 2026-05-03
+Source: draft/observability-notes/ (3 files)
+Output directory: .claude/skills/draft-to-blog-workspace/iteration-1/eval-1-messy-notes/with_skill/outputs/
+
+=== Articles Created ===
+
+1. observability-three-pillars.md
+   - Title: 可观测性三支柱：从 Prometheus 到 OpenTelemetry 的统一演进
+   - Covers: Metrics (Prometheus, PromQL, alerting), Logging (structured logging, levels, ELK), Tracing (OpenTelemetry, sampling, Tempo)
+   - Category: 可观测性 (new)
+
+=== Errors Fixed ===
+- promethus → Prometheus (throughout)
+- promQL → PromQL
+- AlertManager → Alertmanager
+- opentelemetry → OpenTelemetry
+- otel → OpenTelemetry (formal writing)
+- Removed absolute claim "别再用 jaeger 了" - reframed as "Jaeger is still valid, Tempo is a newer option"
+- Verified VictoriaMetrics spelling (correct)
+- Added proper Histogram bucket configuration advice (original only complained about bad config)
+- Removed crossed-out incorrect claim about OTel only supporting HTTP
+
+=== Reorganization ===
+- Combined 3 fragmented notes into 1 cohesive article
+- Restructured from "stream of consciousness" to logical flow:
+  Metrics (detect) → Logging (diagnose) → Tracing (locate)
+- Added opening hook based on real on-call scenario
+- Added closing example of full investigation workflow
+
+=== Categories ===
+- New category "可观测性" to be added to vpdocs/blog/index.md

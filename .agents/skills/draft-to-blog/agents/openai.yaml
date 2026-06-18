@@ -1,0 +1,7 @@
+interface:
+  display_name: "Draft to Blog"
+  short_description: "Convert draft notes into Nuxt Content posts"
+  default_prompt: "Use $draft-to-blog to turn the selected draft notes into polished blog posts."
+
+policy:
+  allow_implicit_invocation: true

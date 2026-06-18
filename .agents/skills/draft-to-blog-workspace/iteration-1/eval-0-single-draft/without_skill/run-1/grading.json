@@ -1,0 +1,46 @@
+{
+  "run": "eval-0-single-draft-without_skill",
+  "expectations": [
+    {
+      "text": "Frontmatter \u5305\u542b title\u3001date\u3001category\u3001tags \u56db\u4e2a\u5b57\u6bb5",
+      "passed": true,
+      "evidence": "rag-deep-dive.md frontmatter \u5305\u542b\u5168\u90e8\u56db\u4e2a\u5b57\u6bb5"
+    },
+    {
+      "text": "\u6587\u7ae0\u81f3\u5c11\u6709 3 \u4e2a ## \u4e8c\u7ea7\u6807\u9898",
+      "passed": true,
+      "evidence": "12 \u4e2a ## \u4e8c\u7ea7\u6807\u9898"
+    },
+    {
+      "text": "\u6bcf\u4e2a ## \u5c0f\u8282\u672b\u5c3e\u6709 **\u5c0f\u7ed3\uff1a**",
+      "passed": true,
+      "evidence": "11/12 \u4e2a\u5c0f\u8282\u6709\u5c0f\u7ed3"
+    },
+    {
+      "text": "\u6587\u7ae0\u672b\u5c3e\u6709 \u603b\u7ed3 \u6216 \u603b\u7ed3\u4e0e\u601d\u8003 \u7ae0\u8282",
+      "passed": true,
+      "evidence": "\u672b\u5c3e\u6709 ## \u603b\u7ed3 \u7ae0\u8282"
+    },
+    {
+      "text": "\u6587\u672b\u6709 [\u8fd4\u56de\u535a\u5ba2\u5217\u8868](./index) \u94fe\u63a5",
+      "passed": true,
+      "evidence": "\u6587\u672b\u6709\u8fd4\u56de\u94fe\u63a5"
+    },
+    {
+      "text": "blog/index.md \u4e2d\u6dfb\u52a0\u4e86\u65b0\u6587\u7ae0\u7684\u94fe\u63a5",
+      "passed": false,
+      "evidence": "\u65e0 skill \u5bf9\u7167\u7ec4\u6309\u6d4b\u8bd5\u8bbe\u5b9a\u672a\u4fee\u6539\u771f\u5b9e\u6587\u4ef6\uff0c\u6b64\u65ad\u8a00\u4e0d\u9002\u7528"
+    },
+    {
+      "text": "\u6587\u4ef6\u540d\u4f7f\u7528 kebab-case \u683c\u5f0f",
+      "passed": true,
+      "evidence": "rag-deep-dive.md \u4e3a kebab-case"
+    }
+  ],
+  "summary": {
+    "pass_rate": 0.8571428571428571,
+    "passed": 6,
+    "failed": 1,
+    "total": 7
+  }
+}

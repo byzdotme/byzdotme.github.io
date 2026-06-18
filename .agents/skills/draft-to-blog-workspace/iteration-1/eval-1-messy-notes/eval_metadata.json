@@ -1,0 +1,37 @@
+{
+  "eval_id": 1,
+  "eval_name": "messy-notes-conversion",
+  "prompt": "帮我把 draft 中 observability-notes 目录下的笔记整理成可发布的文章",
+  "assertions": [
+    {
+      "id": "frontmatter-complete",
+      "description": "Frontmatter 包含 title、date、category、tags 四个字段",
+      "check": "script"
+    },
+    {
+      "id": "prometheus-spelling-fixed",
+      "description": "纠正了 promethus → Prometheus 的大小写和拼写",
+      "check": "grep"
+    },
+    {
+      "id": "victoriametrics-spelling-correct",
+      "description": "VictoriaMetrics 拼写正确",
+      "check": "grep"
+    },
+    {
+      "id": "not-concatenation",
+      "description": "产出文章经过重新组织，不是三篇原文的机械拼接",
+      "check": "structure_compare"
+    },
+    {
+      "id": "has-sections-and-summaries",
+      "description": "至少有一篇文章包含 ## 小节和 **小结：**",
+      "check": "grep"
+    },
+    {
+      "id": "index-updated",
+      "description": "blog/index.md 中添加了新文章的链接",
+      "check": "diff"
+    }
+  ]
+}
