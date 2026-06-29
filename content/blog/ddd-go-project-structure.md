@@ -3,6 +3,8 @@ title: DDD 实战（八）：Go 项目中的 DDD 代码组织
 date: 2026-06-29
 category: 架构设计
 tags: [DDD, Go, 项目结构, 工程实践]
+series: DDD 实战
+seriesOrder: 8
 ---
 
 # DDD 实战（八）：Go 项目中的 DDD 代码组织

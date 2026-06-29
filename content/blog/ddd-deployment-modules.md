@@ -3,6 +3,8 @@ title: DDD 实战（七）：从领域模型到部署模块
 date: 2026-06-29
 category: 架构设计
 tags: [DDD, 微服务, 模块化单体, Monorepo]
+series: DDD 实战
+seriesOrder: 7
 ---
 
 # DDD 实战（七）：从领域模型到部署模块

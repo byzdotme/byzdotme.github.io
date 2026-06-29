@@ -3,6 +3,8 @@ title: DDD 实战（六）：消息、通知、搜索、开放平台的跨域协
 date: 2026-06-29
 category: 架构设计
 tags: [DDD, 领域事件, 事件驱动, IM]
+series: DDD 实战
+seriesOrder: 6
 ---
 
 # DDD 实战（六）：消息、通知、搜索、开放平台的跨域协作

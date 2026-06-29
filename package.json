@@ -10,25 +10,18 @@
     "docs:build": "nuxt generate",
     "docs:preview": "nuxt preview"
   },
-  "packageManager": "pnpm@10.33.2",
+  "packageManager": "pnpm@11.9.0+sha512.bd682d5d03fe525ef7c9fd6780c6884d1e756ac4c9c9fe00c538782824310dcf90e3ddc4f53835f06dfaebd5085e41855e0bcbb3b60de2ac5bbab89e5036f03b",
   "devDependencies": {
     "@nuxt/content": "^3",
     "@nuxtjs/tailwindcss": "^6",
-    "@tailwindcss/typography": "^0.5.19",
-    "@types/node": "^24",
-    "nuxt": "^3",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^24.13.2",
+    "nuxt": "^4.4.8",
     "typescript": "^6"
   },
   "dependencies": {
-    "better-sqlite3": "^12.10.0",
-    "motion": "^12",
+    "better-sqlite3": "^12.11.1",
+    "motion": "^12.42.0",
     "zod": "^4.4.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "better-sqlite3",
-      "esbuild"
-    ]
   }
 }

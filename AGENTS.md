@@ -1,6 +1,6 @@
 ## 项目概述
 
-基于 Nuxt 3 + Nuxt Content v3 的个人网站，包含首页、博客和简历，通过 GitHub Actions 部署到 GitHub Pages（域名 `byz.me`）。
+基于 Nuxt 4 + Nuxt Content v3 的个人网站，包含首页、博客和简历，通过 GitHub Actions 部署到 GitHub Pages（域名 `byz.me`）。
 
 ## 常用命令
 
@@ -13,17 +13,17 @@ pnpm install      # 安装依赖
 
 ## 架构
 
-- **框架**: Nuxt 3 + Nuxt Content v3 + Tailwind CSS + Motion One
+- **框架**: Nuxt 4 + Nuxt Content v3 + Tailwind CSS + Motion One
 - **内容目录**:
   - `content/blog/` — 博客文章（Markdown，自动扫描生成目录）
   - `content/resume.md` — 简历
   - `draft/` — 读书笔记草稿，发布时才需要关注
-- **页面**: `pages/`（基于文件路由）
+- **页面**: `app/pages/`（基于文件路由）
   - `index.vue` — 首页（自定义 Vue 组件）
   - `blog/index.vue` — 博客目录（构建时自动扫描 content/blog/，按分类分组）
   - `blog/[...slug].vue` — 文章详情
   - `resume.vue` — 简历页
-- **首页组件**: `components/`（HeroSection、SkillCloud、FeaturedPosts、ProjectCards、SocialLinks、SiteFooter）
+- **首页组件**: `app/components/`（HeroSection、SkillCloud、FeaturedPosts、ProjectCards、SocialLinks、SiteFooter）
 - **配置**:
   - `nuxt.config.ts` — Nuxt 主配置（模块、SSG、预渲染路由）
   - `content.config.ts` — 内容集合 schema（blog、resume）

@@ -3,6 +3,19 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  sourcemap: {
+    server: false,
+    client: false,
+  },
+
+  vite: {
+    build: {
+      modulePreload: {
+        polyfill: false,
+      },
+    },
+  },
+
   nitro: {
     prerender: {
       routes: ['/', '/blog/', '/resume/'],

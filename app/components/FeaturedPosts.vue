@@ -32,9 +32,12 @@
 </template>
 
 <script setup lang="ts">
-const { data: posts } = await useAsyncData('featured-posts', () =>
-  queryCollection('blog').order('date', 'DESC').limit(4).all()
-)
+import { sortBlogPosts } from '~/utils/blogPostOrder'
+
+const { data: posts } = await useAsyncData('featured-posts', async () => {
+  const posts = await queryCollection('blog').all()
+  return sortBlogPosts(posts).slice(0, 4)
+})
 
 function formatDate(d: string | Date) {
   const date = typeof d === 'string' ? new Date(d) : d

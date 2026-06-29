@@ -3,6 +3,8 @@ title: DDD 实战（二）：战略设计，从业务语言到限界上下文
 date: 2026-06-29
 category: 架构设计
 tags: [DDD, 战略设计, 限界上下文, 架构设计]
+series: DDD 实战
+seriesOrder: 2
 ---
 
 # DDD 实战（二）：战略设计，从业务语言到限界上下文

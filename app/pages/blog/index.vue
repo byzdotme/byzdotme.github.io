@@ -35,9 +35,12 @@
 </template>
 
 <script setup lang="ts">
-const { data: posts } = await useAsyncData('blog-posts', () =>
-  queryCollection('blog').order('date', 'DESC').all()
-)
+import { sortBlogPosts } from '~/utils/blogPostOrder'
+
+const { data: posts } = await useAsyncData('blog-posts', async () => {
+  const posts = await queryCollection('blog').all()
+  return sortBlogPosts(posts)
+})
 
 const groupedPosts = computed(() => {
   if (!posts.value) return []

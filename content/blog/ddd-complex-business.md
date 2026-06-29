@@ -3,6 +3,8 @@ title: DDD 实战（一）：DDD 到底在解决什么问题
 date: 2026-06-29
 category: 架构设计
 tags: [DDD, 领域驱动设计, 架构设计, 复杂业务]
+series: DDD 实战
+seriesOrder: 1
 ---
 
 # DDD 实战（一）：DDD 到底在解决什么问题

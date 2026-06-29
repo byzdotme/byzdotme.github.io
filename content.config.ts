@@ -11,6 +11,8 @@ export default defineContentConfig({
         date: z.date(),
         category: z.string(),
         tags: z.array(z.string()),
+        series: z.string().optional(),
+        seriesOrder: z.number().int().positive().optional(),
       }),
     }),
     resume: defineCollection({
