@@ -5,3 +5,5 @@ dist
 .temp
 .nuxt
 .DS_Store
+
+.data
