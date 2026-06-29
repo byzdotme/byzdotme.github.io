@@ -1,9 +1,19 @@
-draft
-node_modules
-dist
-.output
-.temp
-.nuxt
-.DS_Store
+# Content drafts
+draft/
 
-.data
+# Dependencies
+node_modules/
+
+# Build output
+dist
+.output/
+.temp/
+.nuxt/
+.data/
+
+# Local agent settings
+CLAUDE.md
+.claude/
+
+# OS files
+.DS_Store
