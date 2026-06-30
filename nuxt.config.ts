@@ -18,6 +18,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: '小朱的个人站',
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      ],
     },
   },
 
