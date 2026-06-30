@@ -1,6 +1,6 @@
 ---
 title: AI Agent 的工程化哲学：Harness 设计的核心原则
-date: 2026-05-03
+date: 2025-11-27
 category: AI/LLM
 tags: [AI Agent, Harness Engineering, LangGraph, 工程化, LLM]
 ---

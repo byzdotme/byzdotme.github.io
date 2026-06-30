@@ -1,6 +1,6 @@
 ---
 title: Java并发编程演进：从悲观锁的妥协到 AQS 的优雅
-date: 2026-03-15
+date: 2014-03-18
 category: Java并发
 tags: [并发编程, AQS, 锁机制]
 ---

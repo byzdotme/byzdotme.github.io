@@ -1,6 +1,6 @@
 ---
 title: 从经典 RAG 到 Agentic RAG：智能检索的进阶之路
-date: 2026-05-03
+date: 2025-01-18
 category: AI/LLM
 tags: [RAG, Agentic RAG, Graph RAG, 大模型, 生产实践]
 ---

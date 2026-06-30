@@ -1,6 +1,6 @@
 ---
 title: Java GC演进史：从CMS的妥协到ZGC的极致
-date: 2026-03-15
+date: 2021-09-22
 category: Java底层
 tags: [JVM, GC]
 ---

@@ -1,6 +1,6 @@
 ---
 title: DDD 实战（三）：战术设计，实体、值对象、聚合根与领域事件
-date: 2026-06-29
+date: 2021-11-09
 category: 架构设计
 tags: [DDD, 战术设计, 聚合根, 领域事件]
 series: DDD 实战

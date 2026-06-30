@@ -1,6 +1,6 @@
 ---
 title: 让 Codex 读懂你的代码库：AGENTS.md、Skills、MCP 与 Hooks
-date: 2026-06-18
+date: 2025-07-22
 category: AI/LLM
 tags: [Codex, AGENTS.md, Skills, MCP, Hooks, AI编程]
 series: Codex 实战

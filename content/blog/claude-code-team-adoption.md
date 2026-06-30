@@ -1,6 +1,6 @@
 ---
 title: 让 Claude Code 读懂你的代码库：CLAUDE.md 分层与团队落地实践
-date: 2026-05-03
+date: 2025-06-16
 category: AI/LLM
 tags: [Claude Code, CLAUDE.md, 团队协作, 代码库管理, AI编程]
 series: Claude Code 实战

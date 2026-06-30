@@ -1,6 +1,6 @@
 ---
 title: 线上 Full GC 故障排查实战：从告警到根因的系统性方法论
-date: 2026-03-15
+date: 2018-06-12
 category: JVM调优
 tags: [JVM, Full GC, 线上排查, 性能优化]
 ---

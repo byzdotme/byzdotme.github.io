@@ -1,6 +1,6 @@
 ---
 title: Claude Code 自定义模型接入指南：环境变量、网关与切换工具
-date: 2026-06-19
+date: 2025-08-25
 category: AI/LLM
 tags: [Claude Code, LLM Gateway, Claude Code Router, AI编程, 开发工具]
 series: Claude Code 实战

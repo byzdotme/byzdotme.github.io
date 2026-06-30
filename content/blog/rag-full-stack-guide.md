@@ -1,6 +1,6 @@
 ---
 title: RAG 全链路深度解析：从 Chunking 到生产落地的工程实践
-date: 2026-05-03
+date: 2024-11-12
 category: AI/LLM
 tags: [RAG, 检索增强生成, Embedding, 向量数据库, 大模型]
 ---

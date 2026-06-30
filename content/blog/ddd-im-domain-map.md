@@ -1,6 +1,6 @@
 ---
 title: DDD 实战（四）：协同办公 IM 的领域全景
-date: 2026-06-29
+date: 2022-04-22
 category: 架构设计
 tags: [DDD, 协同办公, IM, 领域建模]
 series: DDD 实战

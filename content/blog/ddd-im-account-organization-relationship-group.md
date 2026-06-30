@@ -1,6 +1,6 @@
 ---
 title: DDD 实战（五）：账号、组织、关系、群组的边界取舍
-date: 2026-06-29
+date: 2022-09-16
 category: 架构设计
 tags: [DDD, 限界上下文, IM, 架构取舍]
 series: DDD 实战
