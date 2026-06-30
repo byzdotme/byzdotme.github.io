@@ -3,6 +3,8 @@ title: Codex 实战指北：从入口、权限到高效工作流
 date: 2026-06-18
 category: AI/LLM
 tags: [Codex, AI编程, 开发工具, 工作流]
+series: Codex 实战
+seriesOrder: 1
 ---
 
 # Codex 实战指北：从入口、权限到高效工作流

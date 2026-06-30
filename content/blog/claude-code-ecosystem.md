@@ -3,6 +3,8 @@ title: Claude Code 可编程生态：Skills、MCP 与 Hook 体系全解
 date: 2026-05-03
 category: AI/LLM
 tags: [Claude Code, Skills, MCP, Plugins, Hooks, AI编程]
+series: Claude Code 实战
+seriesOrder: 2
 ---
 
 # Claude Code 可编程生态：Skills、MCP 与 Hook 体系全解

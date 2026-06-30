@@ -12,7 +12,7 @@ export function sortBlogPosts<T extends BlogPostForOrder>(posts: readonly T[]): 
     if (dateDiff !== 0) return dateDiff
 
     if (left.series && left.series === right.series) {
-      const seriesOrderDiff = toSeriesOrder(left) - toSeriesOrder(right)
+      const seriesOrderDiff = toSeriesOrder(right) - toSeriesOrder(left)
       if (seriesOrderDiff !== 0) return seriesOrderDiff
     }
 
@@ -30,5 +30,5 @@ function toTimestamp(date: string | Date | undefined): number {
 }
 
 function toSeriesOrder(post: BlogPostForOrder): number {
-  return typeof post.seriesOrder === 'number' ? post.seriesOrder : Number.POSITIVE_INFINITY
+  return typeof post.seriesOrder === 'number' ? post.seriesOrder : Number.NEGATIVE_INFINITY
 }

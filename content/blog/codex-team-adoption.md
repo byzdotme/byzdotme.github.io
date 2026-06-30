@@ -3,6 +3,8 @@ title: Codex 团队落地实践：从项目 Onboarding 到 Spec-driven 工作流
 date: 2026-06-18
 category: AI/LLM
 tags: [Codex, 团队协作, TDD, OpenSpec, AI编程]
+series: Codex 实战
+seriesOrder: 3
 ---
 
 # Codex 团队落地实践：从项目 Onboarding 到 Spec-driven 工作流
