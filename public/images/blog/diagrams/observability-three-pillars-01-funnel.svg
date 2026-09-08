@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="748" viewBox="0 0 640 748" role="img" aria-labelledby="title desc">
+<title id="title">同一场故障，三个视角</title><desc id="desc">指标、链路追踪、日志各自看到什么、漏掉什么；排查顺序从发现异常到定位服务再到确认具体调用，每一步的视野都在收窄，收窄意味着更贵也更慢。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="640" height="748" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="44" font-size="28" text-anchor="start" fill="#1e293b">同一场故障，三个视角</text>
+<text x="32" y="86" font-size="17" text-anchor="start" fill="#64748b">排查是单向收窄的过程：每换一个视角，视野小一圈，代价高一档</text>
+<rect x="34" y="104" width="182" height="308" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="125" y="134" font-size="19" text-anchor="middle" fill="#1e293b">指标</text>
+<rect x="229" y="104" width="182" height="308" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/><text x="320" y="134" font-size="19" text-anchor="middle" fill="#1e293b">链路追踪</text>
+<rect x="424" y="104" width="182" height="308" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="515" y="134" font-size="19" text-anchor="middle" fill="#1e293b">日志</text>
+<text x="125" y="170" font-size="17" text-anchor="middle" fill="#64748b">看到什么</text>
+<text x="125" y="196" font-size="15" text-anchor="middle" fill="#1e293b">SLO 上慢了 8 秒</text>
+<text x="125" y="220" font-size="15" text-anchor="middle" fill="#1e293b">错误率抬了头</text>
+<text x="125" y="266" font-size="17" text-anchor="middle" fill="#64748b">漏掉什么</text>
+<text x="125" y="292" font-size="15" text-anchor="middle" fill="#1e293b">哪一个请求慢</text>
+<text x="125" y="316" font-size="15" text-anchor="middle" fill="#1e293b">失败的具体原因</text>
+<text x="320" y="170" font-size="17" text-anchor="middle" fill="#64748b">看到什么</text>
+<text x="320" y="196" font-size="15" text-anchor="middle" fill="#1e293b">哪一跳占掉 7.6 秒</text>
+<text x="320" y="220" font-size="15" text-anchor="middle" fill="#1e293b">调用树上下谁等谁</text>
+<text x="320" y="266" font-size="17" text-anchor="middle" fill="#64748b">漏掉什么</text>
+<text x="320" y="292" font-size="15" text-anchor="middle" fill="#1e293b">没被采样的请求</text>
+<text x="320" y="316" font-size="15" text-anchor="middle" fill="#1e293b">那一跳的报错原文</text>
+<text x="515" y="170" font-size="17" text-anchor="middle" fill="#64748b">看到什么</text>
+<text x="515" y="196" font-size="15" text-anchor="middle" fill="#1e293b">这一次的输入输出</text>
+<text x="515" y="220" font-size="15" text-anchor="middle" fill="#1e293b">堆栈和错误码</text>
+<text x="515" y="266" font-size="17" text-anchor="middle" fill="#64748b">漏掉什么</text>
+<text x="515" y="292" font-size="15" text-anchor="middle" fill="#1e293b">是个例还是普遍</text>
+<text x="515" y="316" font-size="15" text-anchor="middle" fill="#1e293b">整体趋势和分布</text>
+<path d="M125 418 L298 458" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M320 418 L320 458" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M515 418 L342 458" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="8" y="426" font-size="14" text-anchor="start" fill="#64748b">这一步在干什么</text>
+<text x="144" y="426" font-size="14" text-anchor="start" fill="#64748b">这一步在干什么</text>
+<text x="430" y="426" font-size="14" text-anchor="end" fill="#64748b">这一步在干什么</text>
+<text x="80" y="446" font-size="15" text-anchor="start" fill="#1e293b">哪一层先看出来</text>
+<text x="255" y="446" font-size="15" text-anchor="start" fill="#1e293b">把请求拆成时间</text>
+<text x="430" y="446" font-size="15" text-anchor="start" fill="#1e293b">翻出具体那一笔</text>
+<text x="320" y="476" font-size="15" text-anchor="middle" fill="#1e293b">排查往前推，视野在收窄</text>
+<polygon points="40,490 600,490 472,586 168,586" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="320" y="522" font-size="16" text-anchor="middle" fill="#1e293b">指标先报警，说出「哪里不对」</text>
+<text x="320" y="552" font-size="16" text-anchor="middle" fill="#1e293b">分布和趋势 · 分钟级延迟 · 最小代价</text>
+<polygon points="168,586 472,586 414,632 226,632" fill="#ede9fe" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="320" y="612" font-size="16" text-anchor="middle" fill="#1e293b">链路追到出错的服务和那一跳</text>
+<polygon points="226,632 414,632 446,678 194,678" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.5"/>
+<text x="320" y="660" font-size="16" text-anchor="middle" fill="#1e293b">日志给出这一次的细节</text>
+<text x="320" y="710" font-size="14" text-anchor="middle" fill="#64748b">视野收窄的另一面是更贵：留全量日志留不起，链路要采样，指标只能聚合</text>
+</g></svg>

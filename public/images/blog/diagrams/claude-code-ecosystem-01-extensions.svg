@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="640" viewBox="0 0 720 640" role="img" aria-labelledby="title desc">
+<title id="title">Claude Code 扩展的分工</title><desc id="desc">四件机制各管一件事：Skill 写反复交代的流程，Subagent 承担大范围阅读，MCP 提供仓库之外的事实与动作，Hook 在固定时机跑机械检查。Plugin 不提供新能力，是跨仓库安装与版本分发时才需要的一层。</desc>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<rect x="0" y="0" width="720" height="640" rx="16" fill="#fff" stroke="none" stroke-width="1.5"/>
+<rect x="32" y="104" width="320" height="152" rx="12" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5"/>
+<rect x="376" y="104" width="320" height="152" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+<rect x="32" y="272" width="320" height="152" rx="12" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.5"/>
+<rect x="376" y="272" width="320" height="152" rx="12" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+<rect x="32" y="488" width="656" height="124" rx="12" fill="#faf8ff" stroke="#a78bfa" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="32" y="48" font-size="26" text-anchor="start" fill="#1e293b" font-weight="600">Claude Code 扩展的分工</text>
+<text x="32" y="84" font-size="17" text-anchor="start" fill="#64748b">四件机制各管一件事；Plugin 是可选的一层</text>
+<text x="192" y="150" font-size="23" text-anchor="middle" fill="#7c3aed" font-weight="600">Skill</text>
+<text x="192" y="194" font-size="18" text-anchor="middle" fill="#1e293b">反复交代的流程</text>
+<text x="192" y="230" font-size="16" text-anchor="middle" fill="#475569">写进 .claude/skills/</text>
+<text x="536" y="150" font-size="23" text-anchor="middle" fill="#2563eb" font-weight="600">Subagent</text>
+<text x="536" y="194" font-size="18" text-anchor="middle" fill="#1e293b">一次读完很多文件的调查</text>
+<text x="536" y="230" font-size="16" text-anchor="middle" fill="#475569">定义在 .claude/agents/</text>
+<text x="192" y="318" font-size="23" text-anchor="middle" fill="#0d9488" font-weight="600">MCP</text>
+<text x="192" y="362" font-size="18" text-anchor="middle" fill="#1e293b">仓库之外的事实与动作</text>
+<text x="192" y="398" font-size="16" text-anchor="middle" fill="#475569">配置 .mcp.json，服务在外部</text>
+<text x="536" y="318" font-size="23" text-anchor="middle" fill="#b45309" font-weight="600">Hook</text>
+<text x="536" y="362" font-size="18" text-anchor="middle" fill="#1e293b">每次都要跑的机械检查</text>
+<text x="536" y="398" font-size="16" text-anchor="middle" fill="#475569">配在 .claude/settings.json</text>
+<text x="360" y="460" font-size="18" text-anchor="middle" fill="#64748b">↓ 需要装到多个仓库时，才把上面几样收进下面这一层</text>
+<text x="360" y="530" font-size="22" text-anchor="middle" fill="#6d28d9" font-weight="600">Plugin：打包、安装与版本分发（可选的一层）</text>
+<text x="360" y="564" font-size="17" text-anchor="middle" fill="#1e293b">可以一起装 skills/ · agents/ · hooks/ · mcp 配置</text>
+<text x="360" y="594" font-size="16" text-anchor="middle" fill="#475569">只有一个仓库要用时，直接放 .claude/ 就够了</text>
+</g></svg>

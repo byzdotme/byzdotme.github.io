@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="710" viewBox="0 0 880 710" role="img" aria-labelledby="title desc">
+<title id="title">结果未知时，额度释放与保留的两种走向</title><desc id="desc">实付 200 元、已退 50 元后发起 150 元退款，渠道超时。释放占用会让可退额度回到 150 元，第二笔 150 元通过检查，两笔都成功后累计退款 350 元；保留占用则第二笔被条件更新拦下，按原退款单号查询确认后再决定转已退还是释放。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="880" height="710" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="40" y="46" font-size="26" text-anchor="start" fill="#1e293b">结果未知时，额度释放与保留的两种走向</text>
+<rect x="40" y="76" width="800" height="68" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="440" y="106" font-size="18" text-anchor="middle" fill="#1e293b">实付 200 元，已退 50 元 → 可退额度 150 元</text>
+<text x="440" y="130" font-size="18" text-anchor="middle" fill="#64748b">第一天那笔 50 元已确认成功</text>
+<rect x="40" y="160" width="800" height="68" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="440" y="190" font-size="18" text-anchor="middle" fill="#1e293b">第二天发起退 150 元，原子占用 150 元</text>
+<text x="440" y="214" font-size="18" text-anchor="middle" fill="#64748b">可退额度 0 元，请求发往渠道</text>
+<rect x="40" y="244" width="800" height="52" rx="12" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+<text x="440" y="276" font-size="18" text-anchor="middle" fill="#1e293b">渠道超时：本地不知道这笔到底退没退</text>
+<path d="M440 146 L440 158" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+<path d="M440 230 L440 242" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+<path d="M440 298 L440 314 L230 314 L230 330" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+<path d="M440 298 L440 314 L650 314 L650 330" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+<text x="230" y="354" font-size="20" text-anchor="middle" fill="#b91c1c">A · 超时即释放占用</text>
+<text x="650" y="354" font-size="20" text-anchor="middle" fill="#15803d">B · 未知保持占用，先查询</text>
+<rect x="40" y="366" width="380" height="72" rx="12" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="230" y="396" font-size="17" text-anchor="middle" fill="#1e293b">释放 150 元占用</text>
+<text x="230" y="420" font-size="17" text-anchor="middle" fill="#64748b">可退额度回到 150 元</text>
+<rect x="40" y="454" width="380" height="72" rx="12" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="230" y="484" font-size="17" text-anchor="middle" fill="#1e293b">新的 150 元退款通过检查</text>
+<text x="230" y="508" font-size="17" text-anchor="middle" fill="#64748b">第二笔也发往渠道</text>
+<rect x="40" y="542" width="380" height="72" rx="12" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="230" y="572" font-size="17" text-anchor="middle" fill="#1e293b">渠道两笔 150 元都成功</text>
+<text x="230" y="596" font-size="17" text-anchor="middle" fill="#b91c1c">累计退款 350 元 &gt; 实付 200 元</text>
+<rect x="460" y="366" width="380" height="72" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="650" y="396" font-size="17" text-anchor="middle" fill="#1e293b">保留 150 元占用</text>
+<text x="650" y="420" font-size="17" text-anchor="middle" fill="#64748b">可退额度仍是 0 元</text>
+<rect x="460" y="454" width="380" height="72" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="650" y="484" font-size="17" text-anchor="middle" fill="#1e293b">第二笔被条件更新拦下</text>
+<text x="650" y="508" font-size="17" text-anchor="middle" fill="#64748b">影响行数 0，不发往渠道</text>
+<rect x="460" y="542" width="380" height="72" rx="12" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="650" y="572" font-size="17" text-anchor="middle" fill="#1e293b">按原退款单号向渠道查询</text>
+<text x="650" y="596" font-size="17" text-anchor="middle" fill="#15803d">成功转已退，失败才释放</text>
+<path d="M230 438 L230 452" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+<path d="M230 526 L230 540" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+<path d="M650 438 L650 452" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+<path d="M650 526 L650 540" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)" fill="none"/>
+<text x="440" y="664" font-size="19" text-anchor="middle" fill="#475569">A 把「不知道」当成了「失败」：超出的 150 元要等对账才浮出来</text>
+</g>
+</svg>

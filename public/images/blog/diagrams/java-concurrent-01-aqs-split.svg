@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="506" viewBox="0 0 940 506" role="img" aria-labelledby="title desc">
+<title id="title">框架管排队，子类定义 state 规则</title><desc id="desc">AQS 把线程排队、阻塞与唤醒留给框架，把同步状态的含义留给子类，state 是两半共享的唯一变量。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="940" height="506" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="42" font-size="26" text-anchor="start" fill="#1e293b">框架管排队，子类定义 state 规则</text>
+<rect x="40" y="78" width="420" height="184" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="60" y="110" font-size="22" text-anchor="start" fill="#1e293b">AQS 框架负责的部分</text>
+<text x="60" y="150" font-size="20" text-anchor="start" fill="#1e293b">线程入队、阻塞、唤醒</text>
+<text x="60" y="186" font-size="20" text-anchor="start" fill="#1e293b">内部用 CLH 双向队列</text>
+<text x="60" y="222" font-size="20" text-anchor="start" fill="#1e293b">acquire / release 是 final</text>
+<rect x="500" y="78" width="400" height="184" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="520" y="110" font-size="22" text-anchor="start" fill="#1e293b">子类负责的部分</text>
+<text x="520" y="150" font-size="20" text-anchor="start" fill="#1e293b">独占：tryAcquire / tryRelease</text>
+<text x="520" y="186" font-size="20" text-anchor="start" fill="#1e293b">共享：tryAcquireShared 等</text>
+<text x="520" y="222" font-size="20" text-anchor="start" fill="#1e293b">公平与非公平的取舍也在这里</text>
+<rect x="40" y="282" width="860" height="56" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+<text x="60" y="318" font-size="20" text-anchor="start" fill="#9a3412">state：唯一的共享变量，重入次数、剩余许可、还需倒数的次数都由子类解释</text>
+<text x="470" y="348" font-size="20" text-anchor="middle" fill="#1e293b">同一把锁上，三个线程同时 lock() 会发生什么</text>
+<text x="200" y="382" font-size="20" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#1e293b">T1</text>
+<text x="400" y="382" font-size="20" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#1e293b">T2</text>
+<text x="600" y="382" font-size="20" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#1e293b">T3</text>
+<path d="M200 388 L200 424" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M400 388 L400 424" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M600 388 L600 424" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="430" width="180" height="46" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="130" y="460" font-size="20" text-anchor="middle" fill="#1e293b">T1 进入临界区</text>
+<rect x="260" y="430" width="440" height="46" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="480" y="460" font-size="20" text-anchor="middle" fill="#1e293b">CLH 队列：T2、T3 先自旋，再挂起等唤醒</text>
+<rect x="740" y="430" width="160" height="46" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="820" y="460" font-size="20" text-anchor="middle" fill="#1e293b">T1 退出后释放</text>
+<text x="470" y="496" font-size="18" text-anchor="middle" fill="#475569">资源释放后唤醒谁，由子类选择的公平策略决定</text>
+</g></svg>

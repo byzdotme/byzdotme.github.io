@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="674" viewBox="0 0 640 674" role="img" aria-labelledby="title desc">
+<title id="title">内部事件与外部契约</title><desc id="desc">内部MessageSent进入开放平台，经权限检查、字段映射及版本转换生成示例外部事件message.created.v1，回调投递独立处理。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="640" height="674" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="44" font-size="28" text-anchor="start" fill="#1e293b">内部事件与外部契约</text>
+<rect x="40" y="100" width="560" height="94" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="320" y="138.48" font-size="22" text-anchor="middle" fill="#1e293b">内部事件：MessageSent</text>
+<text x="320" y="170.48" font-size="22" text-anchor="middle" fill="#1e293b">内部模型可以继续演进</text><path d="M320 194 L320 242" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/><rect x="40" y="246" width="560" height="126" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/><text x="320" y="300.48" font-size="22" text-anchor="middle" fill="#1e293b">开放平台转换层</text>
+<text x="320" y="332.48" font-size="22" text-anchor="middle" fill="#1e293b">租户与授权 · 字段选择 · 版本映射</text><path d="M320 372 L320 420" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/><rect x="40" y="424" width="560" height="94" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="320" y="462.48" font-size="22" text-anchor="middle" fill="#1e293b">对外事件：message.created.v1</text>
+<text x="320" y="494.48" font-size="22" text-anchor="middle" fill="#1e293b">示例名称，独立维护兼容性</text><path d="M320 518 L320 560" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/><text x="320" y="592" font-size="22" text-anchor="middle" fill="#1e293b">签名投递 · 有限重试 · 失败查询</text><text x="320" y="632" font-size="22" text-anchor="middle" fill="#1e293b">内部受理不等待外部应用回调完成</text>
+</g></svg>

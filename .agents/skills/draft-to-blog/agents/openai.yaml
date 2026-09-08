@@ -1,0 +1,7 @@
+interface:
+  display_name: "Draft to Blog"
+  short_description: "Convert drafts into posts, or revise existing ones, in this blog's voice"
+  default_prompt: "Use $draft-to-blog to turn the selected draft notes into a blog post, or to revise an existing article."
+
+policy:
+  allow_implicit_invocation: true

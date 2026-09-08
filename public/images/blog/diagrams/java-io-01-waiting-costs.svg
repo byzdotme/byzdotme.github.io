@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="560" viewBox="0 0 1040 560" role="img" aria-labelledby="title desc">
+<title id="title">三种 I/O 组织方式：一个请求等待时，谁被占住了</title>
+<desc id="desc">同一次「先查库、再调下游」的等待，在阻塞 I/O、NIO + Reactor 和虚拟线程下占住的东西不同，容量先撞上的上限也不同；但数据库连接池、下游配额、超时与背压这一层，三种模型完全一样。</desc>
+<rect width="1040" height="560" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="30" y="42" font-size="24" text-anchor="start" fill="#1e293b">三种 I/O 组织方式：一个请求等待时，谁被占住了</text>
+<text x="30" y="70" font-size="15" text-anchor="start" fill="#475569">同一次「先查库、再调下游」的等待，三列占住的东西不同，先撞上的上限也不同</text>
+
+<rect x="30" y="90" width="150" height="52" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="42" y="122" font-size="15" text-anchor="start" fill="#1e293b">对比项</text>
+
+<rect x="190" y="90" width="265" height="52" rx="8" fill="#fee2e2" stroke="#f87171" stroke-width="1.5"/>
+<text x="202" y="113" font-size="17" text-anchor="start" fill="#7f1d1d">阻塞 I/O</text>
+<text x="202" y="132" font-size="12" text-anchor="start" fill="#991b1b">一连接一平台线程</text>
+
+<rect x="470" y="90" width="265" height="52" rx="8" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="482" y="113" font-size="17" text-anchor="start" fill="#1e3a8a">NIO + Reactor</text>
+<text x="482" y="132" font-size="12" text-anchor="start" fill="#1d4ed8">一个线程管一批连接</text>
+
+<rect x="750" y="90" width="265" height="52" rx="8" fill="#dcfce7" stroke="#4ade80" stroke-width="1.5"/>
+<text x="762" y="113" font-size="17" text-anchor="start" fill="#14532d">虚拟线程</text>
+<text x="762" y="132" font-size="12" text-anchor="start" fill="#15803d">JVM 调度到载体线程</text>
+
+<rect x="30" y="152" width="150" height="110" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="42" y="212" font-size="15" text-anchor="start" fill="#1e293b">等待时被占住</text>
+<rect x="190" y="152" width="265" height="110" rx="8" fill="#fff5f5" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="202" y="186" font-size="14" text-anchor="start" fill="#1e293b">1 个平台线程（线程池配额）</text>
+<text x="202" y="212" font-size="14" text-anchor="start" fill="#1e293b">线程栈的地址空间</text>
+<text x="202" y="238" font-size="14" text-anchor="start" fill="#1e293b">1 个连接 / 1 个 fd</text>
+<rect x="470" y="152" width="265" height="110" rx="8" fill="#f8fbff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="482" y="186" font-size="14" text-anchor="start" fill="#1e293b">1 个连接 / 1 个 fd</text>
+<text x="482" y="212" font-size="14" text-anchor="start" fill="#1e293b">连接与半包的状态对象（堆）</text>
+<text x="482" y="238" font-size="14" text-anchor="start" fill="#1e293b">没有线程陪它等</text>
+<rect x="750" y="152" width="265" height="110" rx="8" fill="#f7fef9" stroke="#86efac" stroke-width="1.5"/>
+<text x="762" y="186" font-size="14" text-anchor="start" fill="#1e293b">1 个连接 / 1 个 fd</text>
+<text x="762" y="212" font-size="14" text-anchor="start" fill="#1e293b">堆上按需增长的 StackChunk</text>
+<text x="762" y="238" font-size="14" text-anchor="start" fill="#1e293b">没有载体线程陪它等</text>
+
+<rect x="30" y="272" width="150" height="72" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="42" y="313" font-size="15" text-anchor="start" fill="#1e293b">谁在等着</text>
+<rect x="190" y="272" width="265" height="72" rx="8" fill="#fff5f5" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="202" y="306" font-size="14" text-anchor="start" fill="#1e293b">被占住的那个平台线程</text>
+<text x="202" y="332" font-size="14" text-anchor="start" fill="#1e293b">正停在 socket read 上</text>
+<rect x="470" y="272" width="265" height="72" rx="8" fill="#f8fbff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="482" y="306" font-size="14" text-anchor="start" fill="#1e293b">EventLoop 在 select 上等</text>
+<text x="482" y="332" font-size="14" text-anchor="start" fill="#1e293b">这批连接，谁就绪处理谁</text>
+<rect x="750" y="272" width="265" height="72" rx="8" fill="#f7fef9" stroke="#86efac" stroke-width="1.5"/>
+<text x="762" y="306" font-size="14" text-anchor="start" fill="#1e293b">载体线程已经让出去</text>
+<text x="762" y="332" font-size="14" text-anchor="start" fill="#1e293b">跑别的虚拟线程了</text>
+
+<rect x="30" y="354" width="150" height="86" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="42" y="402" font-size="15" text-anchor="start" fill="#1e293b">容量先撞上</text>
+<rect x="190" y="354" width="265" height="86" rx="8" fill="#fff5f5" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="202" y="392" font-size="14" text-anchor="start" fill="#1e293b">线程池大小：200 个用满后</text>
+<text x="202" y="418" font-size="14" text-anchor="start" fill="#1e293b">第 201 个在 accept 队列排队</text>
+<rect x="470" y="354" width="265" height="86" rx="8" fill="#f8fbff" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="482" y="392" font-size="14" text-anchor="start" fill="#1e293b">进程 fd 上限（ulimit -n）</text>
+<text x="482" y="418" font-size="14" text-anchor="start" fill="#1e293b">不是 1024 这个数</text>
+<rect x="750" y="354" width="265" height="86" rx="8" fill="#f7fef9" stroke="#86efac" stroke-width="1.5"/>
+<text x="762" y="392" font-size="14" text-anchor="start" fill="#1e293b">载体线程数（默认 CPU 核数）</text>
+<text x="762" y="418" font-size="14" text-anchor="start" fill="#1e293b">被 pin 住的长阻塞会饿死它</text>
+
+<rect x="30" y="452" width="985" height="80" rx="10" fill="#fff7ed" stroke="#fb923c" stroke-width="1.5"/>
+<text x="48" y="484" font-size="16" text-anchor="start" fill="#9a3412">最下面这一层，三列完全一样：换线程模型动不到它</text>
+<text x="48" y="512" font-size="14" text-anchor="start" fill="#7c2d12">数据库连接池配额（HikariCP 默认 10）、下游 QPS 配额、超时与背压、下游自己的线程数</text>
+</g></svg>

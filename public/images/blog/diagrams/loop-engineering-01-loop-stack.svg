@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="582" viewBox="0 0 640 582" role="img" aria-labelledby="title desc">
+<title id="title">四层循环，四种反馈</title><desc id="desc">工具调用改变当前任务，验证反馈修正产物，事件触发新工作，运行记录推动配置改进。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="640" height="582" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="44" font-size="28" text-anchor="start" fill="#1e293b">四层循环，四种反馈</text>
+<rect x="40" y="90" width="560" height="90" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/><text x="320" y="126.48" font-size="22" text-anchor="middle" fill="#1e293b">4 · 配置改进</text>
+<text x="320" y="158.48000000000002" font-size="22" text-anchor="middle" fill="#1e293b">分析运行记录，提出 harness 变更</text><rect x="40" y="200" width="560" height="90" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="320" y="236.48" font-size="22" text-anchor="middle" fill="#1e293b">3 · 事件触发</text>
+<text x="320" y="268.48" font-size="22" text-anchor="middle" fill="#1e293b">定时或事件到来，启动新的工作</text><rect x="40" y="310" width="560" height="90" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/><text x="320" y="346.48" font-size="22" text-anchor="middle" fill="#1e293b">2 · 结果验证</text>
+<text x="320" y="378.48" font-size="22" text-anchor="middle" fill="#1e293b">检查产物，失败带证据返回</text><rect x="40" y="420" width="560" height="90" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="320" y="456.48" font-size="22" text-anchor="middle" fill="#1e293b">1 · 工具调用</text>
+<text x="320" y="488.48" font-size="22" text-anchor="middle" fill="#1e293b">模型根据工具输出决定下一步</text><text x="320" y="556" font-size="21" text-anchor="middle" fill="#1e293b">配置变更也需要独立的回归检查</text>
+</g></svg>

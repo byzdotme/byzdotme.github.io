@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="640" viewBox="0 0 1060 640" role="img" aria-labelledby="title desc">
+<title id="title">从提案到验收：每一步产出什么、谁来评审</title><desc id="desc">提案、规格、任务、执行、验收五个阶段各自的产物与评审人，并标出必须停下来等人确认的闸门。</desc>
+<rect width="1060" height="640" rx="16" fill="#ffffff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="40" y="48" font-size="28" text-anchor="start" fill="#1e293b">从提案到验收：每一步产出什么、谁来评审</text>
+<text x="40" y="82" font-size="16" text-anchor="start" fill="#64748b">产物落在仓库里，评审落在人身上</text>
+<rect x="38" y="110" width="990" height="42" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="48" y="137" font-size="17" text-anchor="start" fill="#475569">阶段</text>
+<text x="180" y="137" font-size="17" text-anchor="start" fill="#475569">产物</text>
+<text x="440" y="137" font-size="17" text-anchor="start" fill="#475569">这一步在干什么</text>
+<text x="792" y="137" font-size="17" text-anchor="start" fill="#475569">谁评审</text>
+<rect x="32" y="166" width="6" height="68" rx="3" fill="#b45309"/>
+<rect x="38" y="166" width="990" height="68" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="48" y="206" font-size="19" text-anchor="start" fill="#1e293b">1 提案</text>
+<text x="180" y="206" font-size="18" text-anchor="start" fill="#1e293b">proposal.md</text>
+<text x="440" y="194" font-size="18" text-anchor="start" fill="#1e293b">说清为什么改、改什么、不改什么</text>
+<text x="440" y="218" font-size="16" text-anchor="start" fill="#64748b">Why / What Changes / Non-Goals / Risks</text>
+<text x="792" y="206" font-size="17" text-anchor="start" fill="#b45309">需求方 · 模块负责人</text>
+<text x="530" y="249" font-size="14" text-anchor="middle" fill="#94a3b8">↓</text>
+<rect x="32" y="254" width="6" height="68" rx="3" fill="#b45309"/>
+<rect x="38" y="254" width="990" height="68" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="48" y="294" font-size="19" text-anchor="start" fill="#1e293b">2 规格</text>
+<text x="180" y="294" font-size="18" text-anchor="start" fill="#1e293b">spec.md</text>
+<text x="440" y="282" font-size="18" text-anchor="start" fill="#1e293b">写对外行为与场景，不写实现</text>
+<text x="440" y="306" font-size="16" text-anchor="start" fill="#64748b">场景用 GIVEN / WHEN / THEN</text>
+<text x="792" y="294" font-size="17" text-anchor="start" fill="#b45309">熟悉该模块的评审人</text>
+<text x="530" y="337" font-size="14" text-anchor="middle" fill="#94a3b8">↓</text>
+<rect x="32" y="342" width="6" height="68" rx="3" fill="#cbd5e1"/>
+<rect x="38" y="342" width="990" height="68" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="48" y="382" font-size="19" text-anchor="start" fill="#1e293b">3 任务</text>
+<text x="180" y="382" font-size="18" text-anchor="start" fill="#1e293b">tasks.md</text>
+<text x="440" y="370" font-size="18" text-anchor="start" fill="#1e293b">拆成能单独实现、单独验证的步骤</text>
+<text x="440" y="394" font-size="16" text-anchor="start" fill="#64748b">每条勾选都要对应到一次运行</text>
+<text x="792" y="382" font-size="17" text-anchor="start" fill="#64748b">执行者自查</text>
+<text x="530" y="425" font-size="14" text-anchor="middle" fill="#94a3b8">↓</text>
+<rect x="32" y="430" width="6" height="68" rx="3" fill="#cbd5e1"/>
+<rect x="38" y="430" width="990" height="68" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="48" y="470" font-size="19" text-anchor="start" fill="#1e293b">4 执行</text>
+<text x="180" y="470" font-size="18" text-anchor="start" fill="#1e293b">diff + 测试输出</text>
+<text x="440" y="458" font-size="18" text-anchor="start" fill="#1e293b">按 tasks 一次一项，先失败测试</text>
+<text x="440" y="482" font-size="16" text-anchor="start" fill="#64748b">完成前逐条对照场景</text>
+<text x="792" y="470" font-size="17" text-anchor="start" fill="#64748b">提交前自查</text>
+<text x="530" y="513" font-size="14" text-anchor="middle" fill="#94a3b8">↓</text>
+<rect x="32" y="518" width="6" height="68" rx="3" fill="#b45309"/>
+<rect x="38" y="518" width="990" height="68" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="48" y="558" font-size="19" text-anchor="start" fill="#1e293b">5 验收</text>
+<text x="180" y="558" font-size="18" text-anchor="start" fill="#1e293b">验收清单 + 未覆盖项</text>
+<text x="440" y="546" font-size="18" text-anchor="start" fill="#1e293b">检查 Non-Goals 有没有被越界</text>
+<text x="440" y="570" font-size="16" text-anchor="start" fill="#64748b">测试绿不等于覆盖了业务承诺</text>
+<text x="792" y="558" font-size="17" text-anchor="start" fill="#b45309">代码审查者</text>
+<text x="40" y="616" font-size="16" text-anchor="start" fill="#475569">深色边条：必须停下来等人确认的闸门；灰条：执行者自查后继续</text>
+</g></svg>
