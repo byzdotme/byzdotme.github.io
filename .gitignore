@@ -1,0 +1,26 @@
+# Content drafts
+draft/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist
+.output/
+.temp/
+.nuxt/
+.data/
+
+# Local agent settings
+CLAUDE.md
+.claude/
+
+# OS files
+.DS_Store
+
+# Git worktrees
+.worktrees/
+
+# zcode
+.v2c
+.video_agent

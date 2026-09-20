@@ -1,0 +1,27 @@
+Task: Convert draft/rag-deep-dive.md into a publishable blog article
+
+What was done:
+1. Read the draft (699 lines, interview-prep style with numbered sections, tables, "面试常问" blocks)
+2. Read 3 existing published articles to understand the blog's style:
+   - vpdocs/blog/ha-about-cap.md (CAP theorem)
+   - vpdocs/blog/java-gc.md (Java GC evolution)
+   - vpdocs/blog/ha-cache-penetration-breakdown.md (Cache penetration/breakdown)
+3. Also read vpdocs/blog/index.md to confirm listing format
+
+Style adaptations made:
+- Added YAML frontmatter with title, date (2026-05-03), category (大模型技术), tags
+- Changed from interview-prep tone to conversational Chinese narrative
+- Removed numbered section prefixes, used Chinese numbering (一、二、三、...)
+- Replaced dense tables with prose summaries where appropriate
+- Converted "面试常问" blocks into natural narrative
+- Added 小结 after each major section
+- Added 总结 at the end
+- Added [返回博客列表](./index) footer
+- Kept technical depth but condensed from 699 lines to ~470 lines
+- Preserved key insights: chunking strategies, embedding selection, hybrid search, rerank, query rewriting, evaluation, advanced patterns, Agentic RAG, production practices
+
+Output files:
+- rag-deep-dive.md - The converted article
+- summary.txt - This file
+
+Note: Did NOT modify any real files in vpdocs/blog/ - only saved copies to the outputs directory.

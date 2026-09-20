@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1090 560" width="1090" height="560" role="img" aria-label="CMS、G1、ZGC 回收周期里哪些阶段与应用并发执行、哪些阶段必须暂停应用">
+  <rect x="0" y="0" width="1090" height="560" fill="#ffffff"/>
+  <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="18" font-weight="700" fill="#111827" text-anchor="start">三段回收周期里，哪一段会让应用停下来</text>
+  <text x="0" y="58" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280" text-anchor="start">同一个回收周期按时间从左到右展开。琥珀色是 STW 阶段：应用线程全部停住；其余颜色是并发阶段：应用继续跑，代价落在 CPU 和堆余量上。</text>
+
+  <text x="30" y="94" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#374151" text-anchor="start">回收器与关键机制</text>
+  <text x="334" y="94" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#374151" text-anchor="start">起</text>
+  <text x="624" y="94" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#374151" text-anchor="start">承</text>
+  <text x="928" y="94" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="700" fill="#374151" text-anchor="start">合</text>
+
+  <rect x="30" y="120" width="180" height="94" rx="8" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="42" y="144" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#111827" text-anchor="start">CMS</text>
+  <text x="42" y="166" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280" text-anchor="start">并发标记，不压缩</text>
+  <text x="42" y="186" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#b45309" text-anchor="start">后备回收会退化成单线程</text>
+  <rect x="250" y="120" width="270" height="94" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="266" y="144" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">① 初始标记：只顺着根找一层</text>
+  <text x="266" y="168" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">② 重新标记：补并发期间的变动</text>
+  <text x="266" y="190" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">③ 空间不够时退化为整堆压缩</text>
+  <rect x="534" y="120" width="270" height="94" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="550" y="144" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">① 并发标记：应用继续跑</text>
+  <text x="550" y="168" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">② 并发清除：回收垃圾，不搬对象</text>
+  <text x="550" y="190" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">③ 碎片留在原地，不整理</text>
+  <rect x="818" y="120" width="242" height="94" rx="8" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="830" y="144" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">并发阶段仍要留出晋升余量</text>
+  <text x="830" y="168" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">否则触发后备回收</text>
+  <text x="830" y="190" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#b45309" text-anchor="start">最坏停顿以秒计，不是毫秒</text>
+
+  <rect x="30" y="236" width="180" height="94" rx="8" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="42" y="260" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#111827" text-anchor="start">G1</text>
+  <text x="42" y="282" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280" text-anchor="start">Region + 复制，挑着收</text>
+  <text x="42" y="302" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#b45309" text-anchor="start">暂停靠预测，不是硬保证</text>
+  <rect x="250" y="236" width="270" height="94" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="266" y="260" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">① 选 Region：用成本模型挑收益</text>
+  <text x="266" y="284" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">② 复制存活对象到空闲 Region</text>
+  <text x="266" y="306" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">③ Mixed GC 连老年代 Region 一起搬</text>
+  <rect x="534" y="236" width="270" height="94" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="550" y="260" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">① 并发标记：写屏障记录跨 Region</text>
+  <text x="550" y="284" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">引用，RSet 就是这笔开销</text>
+  <text x="550" y="306" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">② 并发标记期间应用可继续分配</text>
+  <rect x="818" y="236" width="242" height="94" rx="8" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="830" y="260" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">标记没走完空间就满了</text>
+  <text x="830" y="284" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#b45309" text-anchor="start">退化成单线程 Full GC</text>
+  <text x="830" y="306" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280" text-anchor="start">大对象还要连续多个 Region</text>
+
+  <rect x="30" y="352" width="180" height="94" rx="8" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="42" y="376" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="700" fill="#111827" text-anchor="start">ZGC</text>
+  <text x="42" y="398" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280" text-anchor="start">染色指针 + 读屏障</text>
+  <text x="42" y="418" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#b45309" text-anchor="start">停顿几乎不随堆变化</text>
+  <rect x="250" y="352" width="270" height="94" rx="8" fill="#d1fae5" stroke="#10b981"/>
+  <text x="266" y="376" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">只扫根集合：工作量取决于线程数</text>
+  <text x="266" y="400" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">和栈深度，不取决于堆有多大</text>
+  <text x="266" y="422" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">对象图改动全部挪到并发阶段</text>
+  <rect x="534" y="352" width="270" height="94" rx="8" fill="#d1fae5" stroke="#10b981"/>
+  <text x="550" y="376" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">并发标记：指针颜色记录存活状态</text>
+  <text x="550" y="400" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">并发转移：读屏障自愈，改写指针</text>
+  <text x="550" y="422" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">转移过程不需要停下来</text>
+  <rect x="818" y="352" width="242" height="94" rx="8" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="830" y="376" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">并发不等于免费：CPU 要留够</text>
+  <text x="830" y="400" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#111827" text-anchor="start">堆余量也要留够，否则照样掉队</text>
+  <text x="830" y="422" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280" text-anchor="start">选项和默认模式按 JDK 版本复核</text>
+
+  <text x="0" y="486" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280" text-anchor="start">读图方式：先找每条泳道里最贵的那一段，再看它会不会因为「空间不够」而变成后备回收——那才是尾延迟真正的来源。</text>
+
+  <rect x="0" y="510" width="18" height="12" rx="2" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="26" y="521" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6b7280" text-anchor="start">STW：应用线程停住</text>
+  <rect x="220" y="510" width="18" height="12" rx="2" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="246" y="521" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6b7280" text-anchor="start">并发：应用继续跑，开销记在 CPU 上</text>
+  <rect x="560" y="510" width="18" height="12" rx="2" fill="#d1fae5" stroke="#10b981"/>
+  <text x="586" y="521" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6b7280" text-anchor="start">ZGC 并发阶段：应用继续跑，靠读屏障自愈</text>
+</svg>

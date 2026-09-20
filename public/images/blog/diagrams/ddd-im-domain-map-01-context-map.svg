@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="660" viewBox="0 0 640 660" role="img" aria-labelledby="title desc">
+<title id="title">协同办公 IM 的领域地图</title><desc id="desc">身份与访问、企业与组织是两个事实源，向下提供事实与事件给关系、群组与会话、消息三个规则所有者，再以可延迟的业务事件传给通知、搜索、治理三个派生视图。派生视图可以重建，但不能把索引或提醒状态写回业务事实。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="640" height="660" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="44" font-size="28" text-anchor="start" fill="#1e293b">协同办公 IM 的领域地图</text>
+<text x="32" y="76" font-size="16" text-anchor="start" fill="#64748b">箭头是事实流向，不是调用顺序；同层可互相调用，但不能改对方的表</text>
+<rect x="32" y="104" width="272" height="96" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/><text x="168" y="146" font-size="24" text-anchor="middle" fill="#1e293b">身份与访问</text>
+<text x="168" y="178" font-size="16" text-anchor="middle" fill="#1e293b">账号 · 凭证 · 设备</text>
+<rect x="336" y="104" width="272" height="96" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/><text x="472" y="146" font-size="24" text-anchor="middle" fill="#1e293b">企业与组织</text>
+<text x="472" y="178" font-size="16" text-anchor="middle" fill="#1e293b">租户 · 部门 · 成员</text>
+<path d="M168 200 L168 234 M472 200 L472 234" fill="none" stroke="#64748b" stroke-width="2"/>
+<path d="M120 234 L520 234" fill="none" stroke="#64748b" stroke-width="2"/>
+<path d="M120 234 L120 272 M320 234 L320 272 M520 234 L520 272" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="32" y="272" width="176" height="96" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/><text x="120" y="310" font-size="24" text-anchor="middle" fill="#1e293b">关系</text>
+<text x="120" y="344" font-size="16" text-anchor="middle" fill="#1e293b">申请 · 好友 · 拉黑</text>
+<rect x="232" y="272" width="176" height="96" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/><text x="320" y="310" font-size="24" text-anchor="middle" fill="#1e293b">群组与会话</text>
+<text x="320" y="344" font-size="16" text-anchor="middle" fill="#1e293b">群成员 · 群治理</text>
+<rect x="432" y="272" width="176" height="96" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/><text x="520" y="310" font-size="24" text-anchor="middle" fill="#1e293b">消息</text>
+<text x="520" y="344" font-size="16" text-anchor="middle" fill="#1e293b">发送 · 撤回 · 已读</text>
+<path d="M120 368 L120 402 M320 368 L320 402 M520 368 L520 402" fill="none" stroke="#64748b" stroke-width="2"/>
+<path d="M120 402 L520 402" fill="none" stroke="#64748b" stroke-width="2"/>
+<path d="M120 402 L120 440 M320 402 L320 440 M520 402 L520 440" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<text x="140" y="426" font-size="15" text-anchor="start" fill="#64748b">业务事件，可延迟</text>
+<rect x="32" y="440" width="176" height="88" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/><text x="120" y="482" font-size="24" text-anchor="middle" fill="#1e293b">通知</text>
+<text x="120" y="512" font-size="15" text-anchor="middle" fill="#1e293b">提醒 · 偏好 · 频控</text>
+<rect x="232" y="440" width="176" height="88" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/><text x="320" y="482" font-size="24" text-anchor="middle" fill="#1e293b">搜索</text>
+<text x="320" y="512" font-size="15" text-anchor="middle" fill="#1e293b">索引 · 查询视图</text>
+<rect x="432" y="440" width="176" height="88" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/><text x="520" y="482" font-size="24" text-anchor="middle" fill="#1e293b">治理与安全</text>
+<text x="520" y="512" font-size="15" text-anchor="middle" fill="#1e293b">审计 · 风控 · 合规</text>
+<text x="32" y="572" font-size="16" text-anchor="start" fill="#b91c1c">通知和搜索可以重建，但不能把索引或提醒状态写回业务事实</text>
+<text x="32" y="600" font-size="16" text-anchor="start" fill="#64748b">工作台与开放平台同属规则所有者一层，图中只画事实流主干</text>
+<rect x="32" y="620" width="24" height="18" rx="4" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/><text x="64" y="635" font-size="15" text-anchor="start" fill="#1e293b">事实源</text>
+<rect x="152" y="620" width="24" height="18" rx="4" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/><text x="184" y="635" font-size="15" text-anchor="start" fill="#1e293b">规则所有者</text>
+<rect x="296" y="620" width="24" height="18" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/><text x="328" y="635" font-size="15" text-anchor="start" fill="#1e293b">派生视图</text>
+<path d="M424 629 L464 629" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4"/><text x="472" y="635" font-size="15" text-anchor="start" fill="#1e293b">异步事件</text>
+</g></svg>

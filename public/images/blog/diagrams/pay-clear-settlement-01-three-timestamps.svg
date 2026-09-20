@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="630" viewBox="0 0 1000 630" role="img" aria-labelledby="title desc">
+<title id="title">对账的三个时间点：差异产生在两个间隙里</title>
+<desc id="desc">渠道扣款、本地入账、渠道账单到达是三个互不相同的时刻。第一段间隙里本地还没收到这笔账，会把时差判成渠道有、本地无；第二段间隙里账单还没生成，会把本地有、渠道无判成差错。三个时刻都走完，差异才是差异。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="1000" height="630" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="40" y="52" font-size="28" text-anchor="start" fill="#1e293b">对账的三个时间点：差异产生在两个间隙里</text>
+<rect x="40" y="92" width="280" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="180" y="134" font-size="24" text-anchor="middle" fill="#1e293b">① 渠道扣款</text>
+<text x="180" y="170" font-size="20" text-anchor="middle" fill="#1e293b">用户账户的钱真的少了</text>
+<text x="180" y="202" font-size="18" text-anchor="middle" fill="#64748b">此刻本地还没有记录</text>
+<rect x="360" y="92" width="280" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="500" y="134" font-size="24" text-anchor="middle" fill="#1e293b">② 本地入账</text>
+<text x="500" y="170" font-size="20" text-anchor="middle" fill="#1e293b">收到回调或查询结果</text>
+<text x="500" y="202" font-size="18" text-anchor="middle" fill="#64748b">本地写成成功并记账</text>
+<rect x="680" y="92" width="280" height="130" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="820" y="134" font-size="24" text-anchor="middle" fill="#1e293b">③ 渠道账单到达</text>
+<text x="820" y="170" font-size="20" text-anchor="middle" fill="#1e293b">渠道打包当天全部交易</text>
+<text x="820" y="202" font-size="18" text-anchor="middle" fill="#64748b">通常 T+1 的凌晨</text>
+<path d="M180 222 L180 302" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M500 222 L500 302" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M820 222 L820 302" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M40 310 L952 310" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<circle cx="180" cy="310" r="8" fill="#a78bfa"/>
+<circle cx="500" cy="310" r="8" fill="#a78bfa"/>
+<circle cx="820" cy="310" r="8" fill="#a78bfa"/>
+<rect x="196" y="322" width="288" height="10" rx="5" fill="#fde68a" stroke="#f59e0b" stroke-width="1"/>
+<rect x="516" y="322" width="288" height="10" rx="5" fill="#fde68a" stroke="#f59e0b" stroke-width="1"/>
+<path d="M340 332 L340 360" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M660 332 L660 360" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="190" y="364" width="300" height="112" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="340" y="400" font-size="19" text-anchor="middle" fill="#92400e">本地还没收到这笔账</text>
+<text x="340" y="432" font-size="19" text-anchor="middle" fill="#92400e">此刻判「渠道有、本地无」</text>
+<text x="340" y="464" font-size="19" text-anchor="middle" fill="#92400e">判到的是时差，不是差错</text>
+<rect x="510" y="364" width="300" height="112" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+<text x="660" y="400" font-size="19" text-anchor="middle" fill="#92400e">本地已成功，账单还没到</text>
+<text x="660" y="432" font-size="19" text-anchor="middle" fill="#92400e">此刻判「本地有、渠道无」</text>
+<text x="660" y="464" font-size="19" text-anchor="middle" fill="#92400e">同一笔明天会自己平掉</text>
+<rect x="40" y="510" width="920" height="76" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="500" y="546" font-size="20" text-anchor="middle" fill="#1e293b">对账能下结论的位置在 ③ 之后</text>
+<text x="500" y="576" font-size="19" text-anchor="middle" fill="#1e293b">三个时间点都走完了，差异才是差异</text>
+</g></svg>

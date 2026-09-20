@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000" role="img" aria-labelledby="title desc">
+<title id="title">配置该放哪一格：信息形态与放错的后果</title>
+<desc id="desc">AGENTS.md 是进入上下文的 Markdown，每条任务都遵守，把权限禁令写进去不会真的关掉访问；.codex/config.toml 是客户端执行的 TOML，进入会话并立即生效，把多步骤流程写进去会常驻占用上下文且不同步；Skill 是按任务描述触发的 Markdown，匹配时才加载完整步骤并绑定验证命令，把项目铁律写进去等于只在该类任务里生效。</desc>
+<rect width="720" height="1000" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="50" font-size="24" text-anchor="start" fill="#1e293b">配置该放哪一格：信息形态与放错的后果</text>
+<text x="32" y="84" font-size="17" text-anchor="start" fill="#64748b">同一件事写在不同位置，生效范围和生效时机就不同</text>
+
+<rect x="32" y="110" width="656" height="192" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="56" y="158" font-size="19" text-anchor="start" fill="#1e293b">AGENTS.md（根目录）</text>
+<text x="56" y="194" font-size="16" text-anchor="start" fill="#475569">形态：进入上下文的 Markdown</text>
+<text x="56" y="224" font-size="16" text-anchor="start" fill="#475569">生效：每条任务都遵守，靠模型阅读执行</text>
+<text x="56" y="254" font-size="16" text-anchor="start" fill="#b45309">放错：把权限禁令写进去，访问并没有真的关掉</text>
+<text x="56" y="282" font-size="16" text-anchor="start" fill="#b45309">这里只适合项目铁律、目录契约、验证命令</text>
+
+<rect x="32" y="326" width="656" height="192" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="56" y="374" font-size="19" text-anchor="start" fill="#1e293b">.codex/config.toml</text>
+<text x="56" y="410" font-size="16" text-anchor="start" fill="#475569">形态：由客户端执行的 TOML</text>
+<text x="56" y="440" font-size="16" text-anchor="start" fill="#475569">生效：进入会话即生效，不依赖模型遵守</text>
+<text x="56" y="470" font-size="16" text-anchor="start" fill="#b45309">放错：把多步骤流程写进来，它不常驻上下文</text>
+<text x="56" y="498" font-size="16" text-anchor="start" fill="#b45309">这里只适合模型、审批、沙箱与 MCP 连接</text>
+
+<rect x="32" y="542" width="656" height="192" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="56" y="590" font-size="19" text-anchor="start" fill="#1e293b">.agents/skills/x/SKILL.md</text>
+<text x="56" y="626" font-size="16" text-anchor="start" fill="#475569">形态：按任务描述触发的 Markdown</text>
+<text x="56" y="656" font-size="16" text-anchor="start" fill="#475569">生效：匹配时才加载完整步骤，并绑定验证命令</text>
+<text x="56" y="686" font-size="16" text-anchor="start" fill="#b45309">放错：把项目铁律写进来，只在该类任务里生效</text>
+<text x="56" y="714" font-size="16" text-anchor="start" fill="#b45309">这里只适合重复出现的多步骤流程</text>
+
+<rect x="32" y="758" width="656" height="192" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="56" y="806" font-size="19" text-anchor="start" fill="#1e293b">三者放错一格之后</text>
+<text x="56" y="842" font-size="16" text-anchor="start" fill="#475569">同一条规则在两处出现，很难判断以哪一份为准</text>
+<text x="56" y="872" font-size="16" text-anchor="start" fill="#475569">改掉其中一份，另一份仍按老要求继续执行</text>
+<text x="56" y="902" font-size="16" text-anchor="start" fill="#b45309">看起来都配好了，实际生效的规则没人说得清</text>
+<text x="56" y="930" font-size="16" text-anchor="start" fill="#b45309">先用一个全新会话跑一遍，看哪条没生效再补</text>
+</g>
+</svg>

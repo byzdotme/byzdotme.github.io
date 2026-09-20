@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="1010" viewBox="0 0 880 1010" role="img" aria-labelledby="title desc">
+<title id="title">一次付款在单据层怎么展开</title>
+<desc id="desc">交易单记录业务意图，支付单记录一次执行尝试并由业务请求号保证幂等，通道请求记录每次外部调用；渠道结果自下而上驱动上层状态。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#94a3b8"/></marker>
+<marker id="arrow-up" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#db2777"/></marker></defs>
+<rect width="880" height="1010" rx="16" fill="#ffffff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<rect x="40" y="176" width="240" height="372" rx="12" fill="#eef2ff" stroke="#818cf8" stroke-width="1.5"/>
+<rect x="320" y="176" width="240" height="372" rx="12" fill="#f5f3ff" stroke="#a78bfa" stroke-width="1.5"/>
+<rect x="600" y="176" width="240" height="372" rx="12" fill="#ecfeff" stroke="#22d3ee" stroke-width="1.5"/>
+<rect x="40" y="552" width="800" height="46" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<rect x="40" y="616" width="520" height="148" rx="12" fill="#fefce8" stroke="#facc15" stroke-width="1.5"/>
+<rect x="600" y="616" width="240" height="156" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="40" y="860" width="760" height="128" rx="12" fill="#fdf2f8" stroke="#f9a8d4" stroke-width="1.5"/>
+<polyline points="60,332 260,332" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="60,380 260,380" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="60,428 260,428" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="60,490 260,490" fill="none" stroke="#c7d2fe" stroke-width="1"/>
+<polyline points="340,332 540,332" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="340,380 540,380" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="340,428 540,428" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="340,490 540,490" fill="none" stroke="#ddd6fe" stroke-width="1"/>
+<polyline points="620,332 820,332" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="620,380 820,380" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="620,428 820,428" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<polyline points="620,490 820,490" fill="none" stroke="#a5f3fc" stroke-width="1"/>
+<polyline points="282,344 312,344" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="562,344 592,344" fill="none" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="60,966 60,946" fill="none" stroke="#db2777" stroke-width="2" marker-end="url(#arrow-up)"/>
+<text x="44" y="64" font-size="28" text-anchor="start" fill="#0f172a" font-weight="600">一次付款在单据层怎么展开</text>
+<text x="44" y="100" font-size="18" text-anchor="start" fill="#475569">三层单据各自记什么、谁产生谁、哪个字段决定幂等</text>
+<text x="60" y="208" font-size="21" text-anchor="start" fill="#0f172a" font-weight="600">1 · 交易单</text>
+<text x="60" y="232" font-size="14" text-anchor="start" fill="#64748b">记录这一层：业务意图</text>
+<text x="60" y="262" font-size="15" text-anchor="start" fill="#334155">用户看到的那一件事</text>
+<text x="60" y="314" font-size="14" text-anchor="start" fill="#475569" font-weight="600">买卖双方</text>
+<text x="138" y="314" font-size="14" text-anchor="start" fill="#1e293b">谁买了什么</text>
+<text x="60" y="362" font-size="14" text-anchor="start" fill="#475569" font-weight="600">关联订单</text>
+<text x="138" y="362" font-size="14" text-anchor="start" fill="#1e293b">业务系统的订单号</text>
+<text x="60" y="410" font-size="14" text-anchor="start" fill="#475569" font-weight="600">订单金额</text>
+<text x="138" y="410" font-size="14" text-anchor="start" fill="#1e293b">这笔生意值多少钱</text>
+<text x="60" y="458" font-size="14" text-anchor="start" fill="#475569" font-weight="600">业务状态</text>
+<text x="138" y="458" font-size="14" text-anchor="start" fill="#1e293b">待付款、已完成</text>
+<text x="60" y="474" font-size="14" text-anchor="start" fill="#64748b">它不关心钱具体怎么扣</text>
+<text x="60" y="514" font-size="14" text-anchor="start" fill="#64748b">它只回答两件事：这笔生意能</text>
+<text x="60" y="534" font-size="14" text-anchor="start" fill="#64748b">不能成立、钱最后到没到</text>
+<text x="340" y="208" font-size="21" text-anchor="start" fill="#0f172a" font-weight="600">2 · 支付单</text>
+<text x="340" y="232" font-size="14" text-anchor="start" fill="#64748b">记录这一层：执行尝试</text>
+<text x="340" y="262" font-size="15" text-anchor="start" fill="#334155">这一次打算怎么付</text>
+<text x="340" y="314" font-size="14" text-anchor="start" fill="#475569" font-weight="600">支付方式</text>
+<text x="418" y="314" font-size="14" text-anchor="start" fill="#1e293b">银行卡、余额</text>
+<text x="340" y="362" font-size="14" text-anchor="start" fill="#475569" font-weight="600">支付金额</text>
+<text x="418" y="362" font-size="14" text-anchor="start" fill="#1e293b">本次尝试要扣多少</text>
+<text x="340" y="410" font-size="14" text-anchor="start" fill="#475569" font-weight="600">目标渠道</text>
+<text x="418" y="410" font-size="14" text-anchor="start" fill="#1e293b">这一次发给哪一家</text>
+<text x="340" y="458" font-size="14" text-anchor="start" fill="#475569" font-weight="600">支付状态</text>
+<text x="418" y="458" font-size="14" text-anchor="start" fill="#1e293b">受理、成功、未知</text>
+<text x="340" y="474" font-size="14" text-anchor="start" fill="#64748b">一次支付意图可以试很多次</text>
+<text x="340" y="514" font-size="14" text-anchor="start" fill="#64748b">它是一次尝试：可能受理、成功、</text>
+<text x="340" y="534" font-size="14" text-anchor="start" fill="#64748b">失败，也可能停在未知</text>
+<text x="620" y="208" font-size="21" text-anchor="start" fill="#0f172a" font-weight="600">3 · 通道请求</text>
+<text x="620" y="232" font-size="14" text-anchor="start" fill="#64748b">记录这一层：外部调用凭据</text>
+<text x="620" y="262" font-size="15" text-anchor="start" fill="#334155">真正发出去的那一次</text>
+<text x="620" y="314" font-size="14" text-anchor="start" fill="#475569" font-weight="600">渠道请求号</text>
+<text x="698" y="314" font-size="14" text-anchor="start" fill="#1e293b">对手方那边的单号</text>
+<text x="620" y="362" font-size="14" text-anchor="start" fill="#475569" font-weight="600">请求时间</text>
+<text x="698" y="362" font-size="14" text-anchor="start" fill="#1e293b">什么时候发出去的</text>
+<text x="620" y="410" font-size="14" text-anchor="start" fill="#475569" font-weight="600">结果证据</text>
+<text x="698" y="410" font-size="14" text-anchor="start" fill="#1e293b">原始返回码和报文</text>
+<text x="620" y="458" font-size="14" text-anchor="start" fill="#475569" font-weight="600">重试序号</text>
+<text x="698" y="458" font-size="14" text-anchor="start" fill="#1e293b">同一支付单的第几次</text>
+<text x="620" y="474" font-size="14" text-anchor="start" fill="#64748b">对账时要能对上渠道账单</text>
+<text x="620" y="514" font-size="14" text-anchor="start" fill="#64748b">换一家重试，是这张支付单下</text>
+<text x="620" y="534" font-size="14" text-anchor="start" fill="#64748b">面的又一次请求，不是新一单</text>
+<text x="300" y="332" font-size="13" text-anchor="middle" fill="#475569">1 张</text>
+<text x="300" y="364" font-size="13" text-anchor="middle" fill="#475569">N 张</text>
+<text x="580" y="332" font-size="13" text-anchor="middle" fill="#475569">1 张</text>
+<text x="580" y="364" font-size="13" text-anchor="middle" fill="#475569">N 次</text>
+<text x="60" y="581" font-size="14" text-anchor="start" fill="#334155">一张交易单可以换付款方式、拆成多张支付单；一张支付单可以超时重发、换通道，试很多次。</text>
+<text x="60" y="652" font-size="17" text-anchor="start" fill="#854d0e" font-weight="600">为什么重发和再开一单必须分开</text>
+<text x="60" y="680" font-size="14" text-anchor="start" fill="#713f12">同一个业务请求号只对应一张支付单。超时后重发，</text>
+<text x="60" y="706" font-size="14" text-anchor="start" fill="#713f12">是这张支付单再加一次通道请求，不是新开一张。</text>
+<text x="60" y="732" font-size="14" text-anchor="start" fill="#713f12">作用域、有效期和参与签名的参数，发起付款之前</text>
+<text x="60" y="758" font-size="14" text-anchor="start" fill="#713f12">就要定下来，事后补不回来。</text>
+<text x="616" y="650" font-size="15" text-anchor="start" fill="#334155" font-weight="600">超时、部分失败</text>
+<text x="616" y="668" font-size="14" text-anchor="start" fill="#334155">都只说明这一次请求没拿到</text>
+<text x="616" y="692" font-size="14" text-anchor="start" fill="#334155">结果，不代表扣款没有发生。</text>
+<text x="616" y="716" font-size="14" text-anchor="start" fill="#334155">记录要留在未知态，由查询、</text>
+<text x="616" y="740" font-size="14" text-anchor="start" fill="#334155">通知和对账补齐最终结果，</text>
+<text x="616" y="764" font-size="14" text-anchor="start" fill="#334155">不能靠重发请求补齐。</text>
+<text x="60" y="892" font-size="17" text-anchor="start" fill="#9d174d" font-weight="600">结果只能自下而上驱动，上一层不能抢跑</text>
+<text x="60" y="928" font-size="16" text-anchor="start" fill="#831843" font-weight="600">通道请求成功 → 支付单成功 → 交易单成功</text>
+<text x="76" y="964" font-size="14" text-anchor="start" fill="#be185d">顺序自左向右，但状态回传是往回走</text>
+<text x="360" y="964" font-size="14" text-anchor="start" fill="#be185d">只要下一层的结果还是未知，上一层就不许宣布成功</text>
+</g></svg>

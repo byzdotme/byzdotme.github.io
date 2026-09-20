@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="940" viewBox="0 0 960 940" role="img" aria-labelledby="title desc"><title id="title">安全通信产品的服务端，要把哪些事情接起来</title><desc id="desc">通用软件职责示意，非量子密信内部架构。客户端经业务接口使用身份权限和消息会话能力，安全能力接入协调密钥服务。后台与运维支撑产品。连线不定义明文、密钥流向或加解密位置。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>
+<rect width="960" height="940" rx="20" fill="#fff"/><g font-family="system-ui,-apple-system,PingFang SC,Microsoft YaHei,sans-serif">
+<text x="32" y="46" font-size="28" fill="#1e293b" text-anchor="start">从发消息，到一款能交付的安全通信产品</text>
+<text x="32" y="80" font-size="19" fill="#475569" text-anchor="start">通用职责示意 · 连线表示协作关系，不代表部署拓扑或密钥流向</text>
+<rect id="clients" x="232" y="110" width="496" height="92" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5" data-role="box"/>
+<text x="480.0" y="143" font-size="23" fill="#1e293b" text-anchor="middle" data-container="clients">用户与客户端</text>
+<text x="480.0" y="174" font-size="19" fill="#475569" text-anchor="middle" data-container="clients">登录 · 发消息 · 传文件 · 多端使用</text>
+<path d="M480 202 V238 H176 V284" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M480 238 V284" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M480 238 H784 V284" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="480" y="268" font-size="18" fill="#475569" text-anchor="middle">业务接口与状态交互</text>
+<rect id="identity" x="32" y="284" width="288" height="122" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="176.0" y="317" font-size="23" fill="#1e293b" text-anchor="middle" data-container="identity">身份与权限</text>
+<text x="176.0" y="348" font-size="19" fill="#475569" text-anchor="middle" data-container="identity">账号 · 组织 · 设备身份</text>
+<text x="176.0" y="376" font-size="19" fill="#475569" text-anchor="middle" data-container="identity">成员关系 · 访问授权</text>
+<rect id="messages" x="336" y="284" width="288" height="122" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="480.0" y="317" font-size="23" fill="#1e293b" text-anchor="middle" data-container="messages">消息与会话</text>
+<text x="480.0" y="348" font-size="19" fill="#475569" text-anchor="middle" data-container="messages">路由 · 投递 · 回执</text>
+<text x="480.0" y="376" font-size="19" fill="#475569" text-anchor="middle" data-container="messages">重试 · 离线 · 多端同步</text>
+<rect id="security" x="640" y="284" width="288" height="122" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="784.0" y="317" font-size="23" fill="#1e293b" text-anchor="middle" data-container="security">安全能力接入</text>
+<text x="784.0" y="348" font-size="19" fill="#475569" text-anchor="middle" data-container="security">关联身份、会话与策略</text>
+<text x="784.0" y="376" font-size="19" fill="#475569" text-anchor="middle" data-container="security">SDK / 接口适配 · 异常处理</text>
+<path d="M176 406 V450 H480 V406" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="32" y="480" font-size="18" fill="#475569" text-anchor="start">成员与权限变更需要跨服务协调</text>
+<path d="M624 346 H640" fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M784 406 V526" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="805" y="480" font-size="18" fill="#475569" text-anchor="start">能力对接</text>
+<rect id="platform" x="640" y="526" width="288" height="122" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="784.0" y="559" font-size="23" fill="#1e293b" text-anchor="middle" data-container="platform">密钥与密码服务</text>
+<text x="784.0" y="590" font-size="19" fill="#475569" text-anchor="middle" data-container="platform">密钥授权 · 分配 · 生命周期</text>
+<text x="784.0" y="618" font-size="19" fill="#475569" text-anchor="middle" data-container="platform">对接底层设备与密钥网络</text>
+<rect id="admin" x="32" y="526" width="592" height="122" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="box"/>
+<text x="328.0" y="559" font-size="23" fill="#1e293b" text-anchor="middle" data-container="admin">管理后台与应用集成</text>
+<text x="328.0" y="590" font-size="19" fill="#475569" text-anchor="middle" data-container="admin">单位管理：组织、人员、权限与应用配置</text>
+<text x="328.0" y="618" font-size="19" fill="#475569" text-anchor="middle" data-container="admin">运营支撑：客户开通、服务配置与交付</text>
+<rect id="ops" x="32" y="694" width="896" height="116" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="box"/>
+<text x="480.0" y="727" font-size="23" fill="#1e293b" text-anchor="middle" data-container="ops">贯穿整款产品的工程工作</text>
+<text x="480.0" y="758" font-size="19" fill="#475569" text-anchor="middle" data-container="ops">监控告警 · 故障定位 · 版本兼容 · 发布回滚</text>
+<text x="480.0" y="786" font-size="19" fill="#475569" text-anchor="middle" data-container="ops">日志与排障设计同时遵守安全约束</text>
+<text x="32" y="858" font-size="21" fill="#1e293b" text-anchor="start">加解密在哪里执行，哪些组件可见明文或密钥，由具体方案确定。</text>
+<text x="32" y="895" font-size="19" fill="#475569" text-anchor="start">图中未展开群聊、多端等场景的具体密码设计。</text>
+</g></svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="660" viewBox="0 0 720 660" role="img" aria-labelledby="title desc">
+<title id="title">四件机制在一轮对话里的介入点</title><desc id="desc">Skill 的 description 在会话开始作为索引读入，命中后正文常驻上下文；Hook 卡在工具调用前后，负责拦截与机械反馈；MCP 在调用工具时提供仓库之外的事实；Subagent 承担大范围阅读并只把摘要交回主会话。</desc>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<rect x="0" y="0" width="720" height="660" rx="16" fill="#fff" stroke="none" stroke-width="1.5"/>
+<rect x="32" y="108" width="656" height="64" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="188" width="656" height="64" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="268" width="656" height="64" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="348" width="656" height="64" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="428" width="656" height="64" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="508" width="656" height="64" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+<line x1="204" y1="114" x2="204" y2="566" stroke="#cbd5e1" stroke-width="2"/>
+<circle cx="204" cy="135" r="7" fill="#7c3aed" stroke="#fff" stroke-width="2"/>
+<circle cx="204" cy="215" r="7" fill="#7c3aed" stroke="#fff" stroke-width="2"/>
+<circle cx="204" cy="295" r="7" fill="#b45309" stroke="#fff" stroke-width="2"/>
+<circle cx="204" cy="375" r="7" fill="#0d9488" stroke="#fff" stroke-width="2"/>
+<circle cx="204" cy="455" r="7" fill="#b45309" stroke="#fff" stroke-width="2"/>
+<circle cx="204" cy="535" r="7" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+<text x="32" y="48" font-size="26" text-anchor="start" fill="#1e293b" font-weight="600">一轮对话里，四件机制在哪儿介入</text>
+<text x="32" y="84" font-size="17" text-anchor="start" fill="#64748b">Skill 决定读什么，MCP 决定能碰到什么，Hook 卡在工具调用前后</text>
+<text x="184" y="140" font-size="17" text-anchor="end" fill="#7c3aed" font-weight="600">Skill</text>
+<text x="232" y="140" font-size="17" text-anchor="start" fill="#1e293b">会话开始：所有 Skill 的 description 作为索引读入</text>
+<text x="184" y="220" font-size="17" text-anchor="end" fill="#7c3aed" font-weight="600">Skill</text>
+<text x="232" y="220" font-size="17" text-anchor="start" fill="#1e293b">命中之后：正文进入上下文，一直留到会话结束</text>
+<text x="184" y="300" font-size="17" text-anchor="end" fill="#b45309" font-weight="600">Hook</text>
+<text x="232" y="300" font-size="17" text-anchor="start" fill="#1e293b">调用工具前：PreToolUse，能拦住还没发生的动作</text>
+<text x="184" y="380" font-size="17" text-anchor="end" fill="#0d9488" font-weight="600">MCP</text>
+<text x="232" y="380" font-size="17" text-anchor="start" fill="#1e293b">调用工具时：取仓库之外的事实</text>
+<text x="184" y="460" font-size="17" text-anchor="end" fill="#b45309" font-weight="600">Hook</text>
+<text x="232" y="460" font-size="17" text-anchor="start" fill="#1e293b">调用工具后：PostToolUse，exit 2 把错误退回给模型</text>
+<text x="184" y="540" font-size="17" text-anchor="end" fill="#2563eb" font-weight="600">Subagent</text>
+<text x="232" y="540" font-size="17" text-anchor="start" fill="#1e293b">读不过来时：它自己读，主会话只收一段摘要</text>
+<text x="360" y="600" font-size="16" text-anchor="middle" fill="#475569">Skill 决定模型知道什么，MCP 决定模型能碰到什么</text>
+<text x="360" y="626" font-size="16" text-anchor="middle" fill="#475569">Hook 决定哪些动作不能悄悄过去，Subagent 决定哪些阅读不占主会话</text>
+</g></svg>

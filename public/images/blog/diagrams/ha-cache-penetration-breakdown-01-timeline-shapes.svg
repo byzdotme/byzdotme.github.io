@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 520" width="1180" height="520" role="img" aria-label="穿透与击穿在时间轴上的形态差异：穿透是长期的低强度回源，击穿是同一瞬间越过数据库容量的一次尖峰">
+  <rect x="0" y="0" width="1180" height="520" fill="#ffffff"/>
+  <g font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+
+    <text x="40" y="36" font-size="17" font-weight="700" fill="#111827">穿透与击穿：回源在时间轴上的两种形状</text>
+    <text x="40" y="62" font-size="12" fill="#6b7280">纵轴是回源请求量（示意），横轴是时间。两张图同一刻度</text>
+
+    <rect x="40" y="88" width="510" height="372" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
+    <text x="64" y="122" font-size="15" font-weight="600" fill="#111827">穿透：请求的 key 从来不存在</text>
+    <text x="64" y="146" font-size="12" fill="#6b7280">缓存永远建不起来，每次访问都是回源</text>
+
+    <line x1="90" y1="180" x2="90" y2="370" stroke="#d1d5db" stroke-width="1"/>
+    <line x1="90" y1="370" x2="500" y2="370" stroke="#d1d5db" stroke-width="1"/>
+
+    <rect x="90" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="106" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="122" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="138" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="154" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="170" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="186" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="202" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="218" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="234" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="250" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="266" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="282" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="298" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="314" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="330" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="346" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="362" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="378" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="394" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="410" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="426" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="442" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="458" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+    <rect x="474" y="320" width="9" height="50" rx="1.5" fill="#93c5fd"/>
+
+    <line x1="90" y1="252" x2="500" y2="252" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="496" y="240" font-size="12" fill="#6b7280" text-anchor="end">数据库能长期承受的量级（示意）</text>
+    <text x="94" y="306" font-size="12" fill="#374151">每个 key 都不一样，缓存里建不起来</text>
+
+    <text x="90" y="390" font-size="11" fill="#9ca3af">回源请求量（示意）</text>
+    <text x="500" y="390" font-size="11" fill="#9ca3af" text-anchor="end">时间 →</text>
+    <text x="64" y="414" font-size="12" fill="#374151">查空比例高：回源的 key 彼此都不同</text>
+    <text x="64" y="436" font-size="12" fill="#6b7280">是一条平线：命中率看着正常，数据库一直在放血</text>
+
+    <rect x="630" y="88" width="510" height="372" rx="10" fill="#f9fafb" stroke="#e5e7eb"/>
+    <text x="654" y="122" font-size="15" font-weight="600" fill="#111827">击穿：回源集中在同一个瞬间</text>
+    <text x="654" y="146" font-size="12" fill="#6b7280">同一个热点 key 失效，窗口内的请求一起回源</text>
+
+    <line x1="680" y1="180" x2="680" y2="370" stroke="#d1d5db" stroke-width="1"/>
+    <line x1="680" y1="370" x2="1090" y2="370" stroke="#d1d5db" stroke-width="1"/>
+
+    <rect x="680" y="358" width="410" height="12" fill="#e5e7eb"/>
+    <rect x="845" y="186" width="50" height="172" rx="2" fill="#fecaca" stroke="#ef4444"/>
+
+    <line x1="680" y1="252" x2="1090" y2="252" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text x="1086" y="240" font-size="12" fill="#6b7280" text-anchor="end">数据库能长期承受的量级（示意）</text>
+    <text x="690" y="348" font-size="12" fill="#6b7280">平时：命中缓存，不回源</text>
+    <text x="838" y="196" font-size="12" fill="#b91c1c" text-anchor="end">窗口内：并发请求全部回源</text>
+    <text x="838" y="216" font-size="12" fill="#b91c1c" text-anchor="end">同一个 key 的失效瞬间</text>
+
+    <text x="680" y="390" font-size="11" fill="#9ca3af">回源请求量（示意）</text>
+    <text x="1090" y="390" font-size="11" fill="#9ca3af" text-anchor="end">时间 →</text>
+    <text x="654" y="414" font-size="12" fill="#374151">同一个 key 只失效一次，窗口大约 200ms</text>
+    <text x="654" y="436" font-size="12" fill="#6b7280">尖峰过去就回落：难的是那 200ms 里数据库被顶穿</text>
+
+    <text x="40" y="492" font-size="12" fill="#6b7280">左图一直在虚线下面，却从不停下来；右图只在那一瞬间越过它</text>
+
+  </g>
+</svg>

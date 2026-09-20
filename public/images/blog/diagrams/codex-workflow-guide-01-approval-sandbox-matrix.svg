@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 600" width="1180" height="600" role="img" aria-label="approval_policy 与 sandbox_mode 的五个典型组合，以及每种组合下 Codex 能做什么、什么时候会停下来问">
+  <rect x="0" y="0" width="1180" height="600" fill="#ffffff"/>
+  <text x="40" y="34" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="17" font-weight="700" fill="#111827">approval_policy × sandbox_mode：Codex 的行动半径</text>
+  <text x="40" y="60" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">两组旋钮各管一段：审批管停下来问不问，沙箱管问了也做不了的事本来就不允许做。下表是五个典型组合</text>
+
+  <text x="40" y="100" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="600" fill="#374151">sandbox_mode</text>
+  <text x="220" y="100" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="600" fill="#374151">approval_policy</text>
+  <text x="420" y="100" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="600" fill="#374151">这一档下它实际能做什么</text>
+  <text x="1030" y="100" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" font-weight="600" fill="#374151">什么时候会停下来问你</text>
+
+  <rect x="40" y="112" width="160" height="52" rx="6" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="52" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">read-only</text>
+  <text x="52" y="154" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">文件系统只读</text>
+  <rect x="220" y="112" width="180" height="52" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="232" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">on-request</text>
+  <text x="232" y="154" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">按风险请求批准</text>
+  <rect x="420" y="112" width="590" height="52" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="432" y="133" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">读代码、grep、看 git diff 都能做，写操作被文件系统拦下</text>
+  <text x="432" y="153" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">越出范围的动作会先来问；换成 never 就直接停在这里汇报</text>
+  <rect x="1030" y="112" width="110" height="52" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="1042" y="137" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">想写文件时</text>
+  <text x="1042" y="154" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">改代码、跑测试</text>
+
+  <rect x="40" y="174" width="160" height="60" rx="6" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="52" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">workspace-write</text>
+  <text x="52" y="216" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">可写当前工作区</text>
+  <rect x="220" y="174" width="180" height="60" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="232" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">on-request</text>
+  <text x="232" y="216" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">按风险请求批准</text>
+  <rect x="420" y="174" width="590" height="60" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="432" y="195" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">改文件、跑测试、生成 diff 都做得了，默认不开网络</text>
+  <text x="432" y="215" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">写到工作区外面、装依赖要联网、执行没见过的命令——先问</text>
+  <rect x="1030" y="174" width="110" height="60" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="1042" y="199" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">越出工作区时</text>
+  <text x="1042" y="216" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">装依赖、要联网</text>
+
+  <rect x="40" y="244" width="160" height="56" rx="6" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="52" y="269" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">read-only</text>
+  <text x="52" y="286" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">文件系统只读</text>
+  <rect x="220" y="244" width="180" height="56" rx="6" fill="#d1fae5" stroke="#10b981"/>
+  <text x="232" y="269" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">never</text>
+  <text x="232" y="286" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">不弹批准提示</text>
+  <rect x="420" y="244" width="590" height="56" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="432" y="268" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">全程不打扰，只读分析一次跑完，适合 CI 和定时任务</text>
+  <text x="432" y="288" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">不会因等待确认而挂住；但翻过只读边界的动作做不了，只能如实汇报</text>
+  <rect x="1030" y="244" width="110" height="56" rx="6" fill="#d1fae5" stroke="#10b981"/>
+  <text x="1042" y="269" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">无人值守时不问</text>
+  <text x="1042" y="286" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">它停在边界上</text>
+
+  <rect x="40" y="310" width="160" height="56" rx="6" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="52" y="335" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">workspace-write</text>
+  <text x="52" y="352" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">可写当前工作区</text>
+  <rect x="220" y="310" width="180" height="56" rx="6" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="232" y="335" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">untrusted</text>
+  <text x="232" y="352" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">只自动跑安全只读命令</text>
+  <rect x="420" y="310" width="590" height="56" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="432" y="334" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">写权限在手上，但几乎每一步都要先确认才动</text>
+  <text x="432" y="354" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">适合第一次打开一个陌生仓库：权限没关，节奏也快不起来</text>
+  <rect x="1030" y="310" width="110" height="56" rx="6" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="1042" y="335" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">每一步改动</text>
+  <text x="1042" y="352" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">前面都要点一次</text>
+
+  <rect x="40" y="376" width="160" height="56" rx="6" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="52" y="401" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">workspace-write</text>
+  <text x="52" y="418" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">可写当前工作区</text>
+  <rect x="220" y="376" width="180" height="56" rx="6" fill="#d1fae5" stroke="#10b981"/>
+  <text x="232" y="401" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">never</text>
+  <text x="232" y="418" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">不弹批准提示</text>
+  <rect x="420" y="376" width="590" height="56" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="432" y="400" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">改动直接落盘，中途不打断</text>
+  <text x="432" y="420" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">这是自动化里改代码的常用组合，也是唯一需要额外护栏的场景</text>
+  <rect x="1030" y="376" width="110" height="56" rx="6" fill="#d1fae5" stroke="#10b981"/>
+  <text x="1042" y="401" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">不会停下来</text>
+  <text x="1042" y="418" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">全靠沙箱兜底</text>
+
+  <rect x="40" y="442" width="160" height="60" rx="6" fill="#f3f4f6" stroke="#d1d5db"/>
+  <text x="52" y="467" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#111827">danger-full-access</text>
+  <text x="52" y="484" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">无沙箱</text>
+  <rect x="220" y="442" width="180" height="60" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="232" y="474" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">没有隔离层，</text>
+  <text x="232" y="490" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">审批单独看也没意义</text>
+  <rect x="420" y="442" width="590" height="60" rx="6" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="432" y="466" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">本机、网络、任意路径全部可达，什么都做得了</text>
+  <text x="432" y="486" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">只应在外层已有容器或虚拟机隔离时使用，不是普通开发环境的调参对象</text>
+  <rect x="1030" y="442" width="110" height="60" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="1042" y="467" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="13" fill="#111827">沙箱不兜底</text>
+  <text x="1042" y="484" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="12" fill="#6b7280">只能靠外层隔离</text>
+
+  <rect x="40" y="569" width="18" height="12" rx="2" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="66" y="580" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6b7280">只读动作，不问也做</text>
+  <rect x="180" y="569" width="18" height="12" rx="2" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="206" y="580" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6b7280">停在边界上，等你点头</text>
+  <rect x="350" y="569" width="18" height="12" rx="2" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="376" y="580" font-family="ui-sans-serif, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif" font-size="11" fill="#6b7280">动手之前先确认</text>
+</svg>

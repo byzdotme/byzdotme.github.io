@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="940" viewBox="0 0 960 940" role="img" aria-labelledby="title desc"><title id="title">城域、骨干与星地连接怎样配合</title><desc id="desc">左侧为通用网络结构，非实际线路图。右侧列出公开项目实例，不表示其与左侧节点一一对应或所有项目已经互通。可信中继和可信卫星进入信任范围。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>
+<rect width="960" height="940" rx="20" fill="#fff"/><g font-family="system-ui,-apple-system,PingFang SC,Microsoft YaHei,sans-serif">
+<text x="32" y="46" font-size="28" fill="#1e293b" text-anchor="start">中国的量子通信网络</text>
+<text x="648" y="128" font-size="22" fill="#1e293b" text-anchor="start">公开项目与建设进展</text>
+<rect id="sat" x="188" y="108" width="264" height="94" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="320.0" y="141" font-size="23" fill="#1e293b" text-anchor="middle" data-container="sat">量子卫星</text>
+<text x="320.0" y="172" font-size="19" fill="#475569" text-anchor="middle" data-container="sat">可信卫星中继示例</text>
+<path d="M188 160 H128 V260" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<path d="M452 160 H512 V260" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+<text x="320" y="237" font-size="18" fill="#475569" text-anchor="middle">星地光链路 · 受天气与过境窗口限制</text>
+<rect id="ground-a" x="32" y="260" width="192" height="88" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="128.0" y="293" font-size="23" fill="#1e293b" text-anchor="middle" data-container="ground-a">地面站 A</text>
+<text x="128.0" y="324" font-size="19" fill="#475569" text-anchor="middle" data-container="ground-a">接入地面网络</text>
+<rect id="ground-b" x="416" y="260" width="192" height="88" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="512.0" y="293" font-size="23" fill="#1e293b" text-anchor="middle" data-container="ground-b">地面站 B</text>
+<text x="512.0" y="324" font-size="19" fill="#475569" text-anchor="middle" data-container="ground-b">接入地面网络</text>
+<path d="M128 348 V388" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M512 348 V388" fill="none" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect id="backbone" x="32" y="388" width="576" height="142" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="320.0" y="421" font-size="23" fill="#1e293b" text-anchor="middle" data-container="backbone">多条地面骨干线路</text>
+<text x="320.0" y="452" font-size="19" fill="#475569" text-anchor="middle" data-container="backbone">干线 A：可信站点 ─ 中继 ─ 可信站点</text>
+<text x="320.0" y="480" font-size="19" fill="#475569" text-anchor="middle" data-container="backbone">干线 B：可信站点 ─ 中继 ─ 可信站点</text>
+<text x="320.0" y="508" font-size="19" fill="#475569" text-anchor="middle" data-container="backbone">各段分别产钥，逐站保护和转发密钥</text>
+<path d="M120 530 V574" fill="none" stroke="#047857" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M320 530 V574" fill="none" stroke="#047857" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M520 530 V574" fill="none" stroke="#047857" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect id="city-0" x="32" y="574" width="176" height="94" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="120.0" y="607" font-size="23" fill="#1e293b" text-anchor="middle" data-container="city-0">城域网 A</text>
+<text x="120.0" y="638" font-size="19" fill="#475569" text-anchor="middle" data-container="city-0">连接本地用户</text>
+<rect id="city-1" x="232" y="574" width="176" height="94" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="320.0" y="607" font-size="23" fill="#1e293b" text-anchor="middle" data-container="city-1">城域网 B</text>
+<text x="320.0" y="638" font-size="19" fill="#475569" text-anchor="middle" data-container="city-1">连接本地用户</text>
+<rect id="city-2" x="432" y="574" width="176" height="94" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="520.0" y="607" font-size="23" fill="#1e293b" text-anchor="middle" data-container="city-2">城域网 C</text>
+<text x="520.0" y="638" font-size="19" fill="#475569" text-anchor="middle" data-container="city-2">连接本地用户</text>
+<path d="M120 668 V714" fill="none" stroke="#047857" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M320 668 V714" fill="none" stroke="#047857" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M520 668 V714" fill="none" stroke="#047857" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect id="app-0" x="32" y="714" width="176" height="94" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="box"/>
+<text x="120.0" y="747" font-size="23" fill="#1e293b" text-anchor="middle" data-container="app-0">政务办公</text>
+<text x="120.0" y="778" font-size="19" fill="#475569" text-anchor="middle" data-container="app-0">安全通信应用</text>
+<rect id="app-1" x="232" y="714" width="176" height="94" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="box"/>
+<text x="320.0" y="747" font-size="23" fill="#1e293b" text-anchor="middle" data-container="app-1">企业机房</text>
+<text x="320.0" y="778" font-size="19" fill="#475569" text-anchor="middle" data-container="app-1">加密网关与专线</text>
+<rect id="app-2" x="432" y="714" width="176" height="94" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="box"/>
+<text x="520.0" y="747" font-size="23" fill="#1e293b" text-anchor="middle" data-container="app-2">行业应用</text>
+<text x="520.0" y="778" font-size="19" fill="#475569" text-anchor="middle" data-container="app-2">文件与数据传输</text>
+<text x="648" y="174" font-size="21" fill="#1e293b" text-anchor="start">2016 · “墨子号”发射</text>
+<text x="648" y="211" font-size="21" fill="#1e293b" text-anchor="start">2021 · 天地一体化成果</text>
+<text x="648" y="243" font-size="19" fill="#475569" text-anchor="start">网络地面跨度 4600 公里</text>
+<text x="648" y="426" font-size="22" fill="#1e293b" text-anchor="start">京沪、武合等干线</text>
+<text x="648" y="462" font-size="19" fill="#475569" text-anchor="start">跨区域建立密钥连接</text>
+<text x="648" y="498" font-size="19" fill="#475569" text-anchor="start">可信中继也需安全防护</text>
+<text x="648" y="605" font-size="21" fill="#1e293b" text-anchor="start">合肥、上海、北京、广州等</text>
+<text x="648" y="641" font-size="19" fill="#475569" text-anchor="start">多地建设城域网</text>
+<text x="648" y="742" font-size="21" fill="#1e293b" text-anchor="start">2026 · 合肥—芜湖</text>
+<text x="648" y="777" font-size="19" fill="#475569" text-anchor="start">跨城域加密专线示范</text>
+<text x="32" y="858" font-size="22" fill="#1e293b" text-anchor="start">量子通信网络提供密钥服务；业务密文通过经典网络传输。</text>
+</g></svg>

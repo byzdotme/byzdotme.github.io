@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" role="img" aria-labelledby="title desc">
+<title id="title">先规划还是直接改：纠错点差在哪一步</title><desc id="desc">两条路径对比。直接改：授权后修改、改代码、看 diff、验证；纠错点落在看 diff 这一步，此时代码已经改过一轮。先规划：只读调研、产出计划、Accept 后修改、验证；纠错点落在产出计划这一步，此时一个文件都还没动。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="880" height="420" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="46" font-size="26" text-anchor="start" fill="#1e293b">先规划还是直接改：纠错点差在哪一步</text>
+<text x="32" y="100" font-size="19" text-anchor="start" fill="#475569">需求已经定位到具体位置，直接改</text>
+<rect x="32" y="112" width="170" height="72" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="117" y="155" font-size="19" text-anchor="middle" fill="#1e293b">授权后修改</text>
+<path d="M202 148 L232 148" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="232" y="112" width="170" height="72" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="317" y="155" font-size="19" text-anchor="middle" fill="#1e293b">改代码</text>
+<path d="M402 148 L432 148" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="432" y="112" width="170" height="72" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/><text x="517" y="155" font-size="19" text-anchor="middle" fill="#1e293b">看 diff</text>
+<path d="M602 148 L632 148" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="632" y="112" width="170" height="72" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="717" y="155" font-size="19" text-anchor="middle" fill="#1e293b">验证</text>
+<path d="M517 186 L523 196 L511 196 Z" fill="#f59e0b"/>
+<text x="432" y="218" font-size="17" text-anchor="start" fill="#b45309">纠错点在这里：代码已经改过一轮</text>
+<text x="32" y="272" font-size="19" text-anchor="start" fill="#475569">需求还没定型，先让它规划</text>
+<rect x="32" y="284" width="170" height="72" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="117" y="327" font-size="19" text-anchor="middle" fill="#1e293b">只读调研</text>
+<path d="M202 320 L232 320" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="232" y="284" width="170" height="72" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/><text x="317" y="327" font-size="19" text-anchor="middle" fill="#1e293b">产出计划</text>
+<path d="M402 320 L432 320" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="432" y="284" width="170" height="72" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="517" y="327" font-size="19" text-anchor="middle" fill="#1e293b">Accept 后修改</text>
+<path d="M602 320 L632 320" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="632" y="284" width="170" height="72" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/><text x="717" y="327" font-size="19" text-anchor="middle" fill="#1e293b">验证</text>
+<path d="M317 358 L323 368 L311 368 Z" fill="#f59e0b"/>
+<text x="232" y="390" font-size="17" text-anchor="start" fill="#b45309">纠错点在这里：一个文件都还没动</text>
+</g></svg>

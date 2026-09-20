@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="570" viewBox="0 0 760 570" role="img" aria-labelledby="title desc">
+<title id="title">分层 CLAUDE.md 的加载时机</title><desc id="desc">会话从仓库根启动时，~/.claude/CLAUDE.md 与仓库根 CLAUDE.md 一次性加载；只有真正读到 backend/ 或 backend/billing/ 下的文件时，对应子目录的 CLAUDE.md 才按需追加，反方向不成立。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<rect width="760" height="570" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="48" font-size="26" text-anchor="start" fill="#1e293b">分层 CLAUDE.md：谁在什么时机进入上下文</text>
+<rect x="32" y="88" width="696" height="132" rx="14" fill="#eef2ff" stroke="#818cf8" stroke-width="2"/>
+<text x="60" y="124" font-size="20" text-anchor="start" fill="#4338ca">会话启动时，从工作目录一路向上，找到的都读</text>
+<text x="60" y="166" font-size="18" text-anchor="start" fill="#1e293b">~/.claude/CLAUDE.md</text>
+<text x="410" y="166" font-size="18" text-anchor="start" fill="#475569">个人跨项目的偏好</text>
+<text x="60" y="198" font-size="18" text-anchor="start" fill="#1e293b">&lt;repo&gt;/CLAUDE.md</text>
+<text x="410" y="198" font-size="18" text-anchor="start" fill="#475569">项目铁律、目录地图、命令速查</text>
+<line x1="380" y1="224" x2="380" y2="250" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="32" y="256" width="696" height="88" rx="14" fill="#ecfeff" stroke="#67e8f9" stroke-width="2"/>
+<text x="60" y="292" font-size="20" text-anchor="start" fill="#0e7490">读到 backend/ 下的文件时追加</text>
+<text x="60" y="332" font-size="18" text-anchor="start" fill="#1e293b">&lt;repo&gt;/backend/CLAUDE.md</text>
+<text x="410" y="332" font-size="18" text-anchor="start" fill="#475569">子系统的架构、依赖与常用命令</text>
+<line x1="380" y1="348" x2="380" y2="374" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="32" y="380" width="696" height="88" rx="14" fill="#ecfeff" stroke="#67e8f9" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="60" y="416" font-size="20" text-anchor="start" fill="#0e7490">读到 backend/billing/ 下的文件时再追加</text>
+<text x="60" y="456" font-size="18" text-anchor="start" fill="#1e293b">&lt;repo&gt;/backend/billing/CLAUDE.md</text>
+<text x="410" y="456" font-size="18" text-anchor="start" fill="#475569">模块的历史坑与兼容约束</text>
+<text x="32" y="508" font-size="17" text-anchor="start" fill="#475569">反方向不成立：改根目录下的文件，不会把子目录的规则拉进来。</text>
+<text x="32" y="536" font-size="17" text-anchor="start" fill="#475569">启动时进了什么，之后进什么，取决于真的读到了哪个文件。</text>
+</g></svg>

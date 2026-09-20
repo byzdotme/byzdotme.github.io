@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="600" viewBox="0 0 780 600" role="img" aria-labelledby="title desc">
+<title id="title">分区发生时，同一份数据上的四种操作分别会怎样</title><desc id="desc">占用唯一资源和写入不可改的事实，分区时只有多数派一侧能给出确定结果；读取允许陈旧的内容和只读归档历史，两侧都能返回，只是可能返回旧值。</desc>
+<rect width="780" height="600" rx="16" fill="#fff"/>
+<g font-family="system-ui, -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<text x="32" y="46" font-size="26" text-anchor="start" fill="#1e293b">分区发生时，同一份数据上的四种操作分别会怎样</text>
+<text x="141" y="104" font-size="19" text-anchor="middle" fill="#475569">操作</text>
+<text x="396" y="104" font-size="19" text-anchor="middle" fill="#475569">分区期间返回什么</text>
+<text x="645" y="104" font-size="19" text-anchor="middle" fill="#475569">恢复之后还要做什么</text>
+<rect x="32" y="124" width="218" height="84" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="141" y="162" font-size="18" text-anchor="middle" fill="#1e293b">占用唯一资源</text>
+<text x="141" y="188" font-size="18" text-anchor="middle" fill="#1e293b">（抢锁、领号）</text>
+<rect x="258" y="124" width="276" height="84" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="396" y="162" font-size="18" text-anchor="middle" fill="#1e293b">少数派一侧只能拒绝</text>
+<text x="396" y="188" font-size="18" text-anchor="middle" fill="#1e293b">或等到超时</text>
+<rect x="542" y="124" width="206" height="84" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="645" y="162" font-size="18" text-anchor="middle" fill="#1e293b">请求方自己重试</text>
+<text x="645" y="188" font-size="18" text-anchor="middle" fill="#1e293b">写入要幂等</text>
+<rect x="32" y="220" width="218" height="84" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="141" y="258" font-size="18" text-anchor="middle" fill="#1e293b">写入不能再改的事实</text>
+<text x="141" y="284" font-size="18" text-anchor="middle" fill="#1e293b">（消息入库、扣账）</text>
+<rect x="258" y="220" width="276" height="84" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="396" y="258" font-size="18" text-anchor="middle" fill="#1e293b">少数派侧不能确认成功</text>
+<text x="396" y="284" font-size="18" text-anchor="middle" fill="#1e293b">多数派侧照常提交</text>
+<rect x="542" y="220" width="206" height="84" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="645" y="258" font-size="18" text-anchor="middle" fill="#1e293b">以多数派侧为准</text>
+<text x="645" y="284" font-size="18" text-anchor="middle" fill="#1e293b">少数派侧要能重放</text>
+<rect x="32" y="316" width="218" height="84" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="141" y="354" font-size="18" text-anchor="middle" fill="#1e293b">读取允许陈旧的内容</text>
+<text x="141" y="380" font-size="18" text-anchor="middle" fill="#1e293b">（群公告、成员列表）</text>
+<rect x="258" y="316" width="276" height="84" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="396" y="354" font-size="18" text-anchor="middle" fill="#1e293b">两侧都能返回</text>
+<text x="396" y="380" font-size="18" text-anchor="middle" fill="#1e293b">但可能是旧值</text>
+<rect x="542" y="316" width="206" height="84" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="645" y="354" font-size="18" text-anchor="middle" fill="#1e293b">不用合并</text>
+<text x="645" y="380" font-size="18" text-anchor="middle" fill="#1e293b">要定最旧能多旧</text>
+<rect x="32" y="412" width="218" height="84" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="141" y="450" font-size="18" text-anchor="middle" fill="#1e293b">只读已经归档的历史</text>
+<text x="141" y="476" font-size="18" text-anchor="middle" fill="#1e293b">（几天前的消息）</text>
+<rect x="258" y="412" width="276" height="84" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="396" y="463" font-size="18" text-anchor="middle" fill="#1e293b">两侧返回同一份结果</text>
+<rect x="542" y="412" width="206" height="84" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="645" y="463" font-size="18" text-anchor="middle" fill="#1e293b">没有额外工作</text>
+<rect x="32" y="508" width="14" height="14" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+<text x="56" y="521" font-size="17" text-anchor="start" fill="#475569">分区期间给不出确定结果</text>
+<rect x="320" y="508" width="14" height="14" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+<text x="344" y="521" font-size="17" text-anchor="start" fill="#475569">分区期间仍可返回（可能是旧值）</text>
+<text x="32" y="556" font-size="19" text-anchor="start" fill="#1e293b">同一份数据上的不同操作，承诺可以不一样。</text>
+<text x="32" y="582" font-size="19" text-anchor="start" fill="#1e293b">所以「这个系统是 CP 还是 AP」问得太大。</text>
+</g></svg>

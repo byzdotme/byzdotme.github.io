@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="880" viewBox="0 0 720 880" role="img" aria-labelledby="title desc">
+<title id="title">从设备产钥，到网关加密业务数据</title><desc id="desc">两端可信机房各有 QKD 设备、KME 和 SAE 加密网关。设备之间传输量子信号并进行认证的经典交互，本地向 KME 注入密钥。网关从本地 KME 获取密钥，通过普通网络交互标识并传送密文。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>
+<rect width="720" height="880" rx="16" fill="#fff" data-role="background"/>
+<g font-family="system-ui, -apple-system, PingFang SC, Microsoft YaHei, sans-serif">
+<text x="32" y="46" font-size="26" fill="#1e293b" text-anchor="start">从设备产钥，到网关加密业务数据</text>
+<text x="32" y="80" font-size="18" fill="#475569" text-anchor="start">通用点到点示例；未展开控制、运维和远程终端接入。</text>
+<rect id="site-a" x="32" y="108" width="284" height="630" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="region"/>
+<text x="174" y="142" font-size="20" fill="#1e293b" text-anchor="middle" data-container="site-a">机房 A · 可信站点</text>
+<rect id="sae-a" x="48" y="174" width="252" height="112" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="174" y="207" font-size="20" fill="#1e293b" text-anchor="middle" data-container="sae-a">加密网关 A / SAE</text>
+<text x="174" y="242" font-size="18" fill="#475569" text-anchor="middle" data-container="sae-a">持有 K · 处理业务明文</text>
+<text x="174" y="270" font-size="17" fill="#475569" text-anchor="middle" data-container="sae-a">本例的加密或解密端点</text>
+<rect id="kme-a" x="48" y="390" width="252" height="112" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="174" y="423" font-size="20" fill="#1e293b" text-anchor="middle" data-container="kme-a">密钥管理 / KME</text>
+<text x="174" y="458" font-size="18" fill="#475569" text-anchor="middle" data-container="kme-a">key_ID ↔ K</text>
+<text x="174" y="486" font-size="17" fill="#475569" text-anchor="middle" data-container="kme-a">鉴权 · 密钥池 · 生命周期</text>
+<rect id="qkd-a" x="48" y="606" width="252" height="112" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="174" y="639" font-size="20" fill="#1e293b" text-anchor="middle" data-container="qkd-a">QKD 设备 A</text>
+<text x="174" y="674" font-size="18" fill="#475569" text-anchor="middle" data-container="qkd-a">量子收发与经典后处理</text>
+<text x="174" y="702" font-size="17" fill="#475569" text-anchor="middle" data-container="qkd-a">筛选 · 纠错 · 隐私放大</text>
+<path d="M272 390 V286" fill="none" stroke="#047857" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="56" y="333" font-size="18" fill="#047857" text-anchor="start">认证后本地供钥</text>
+<text x="56" y="362" font-size="17" fill="#475569" text-anchor="start">应用按标识取钥</text>
+<path d="M272 606 V502" fill="none" stroke="#047857" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="56" y="548" font-size="18" fill="#047857" text-anchor="start">产钥后本地注入</text>
+<text x="56" y="578" font-size="17" fill="#475569" text-anchor="start">管理可匹配的材料</text>
+<rect id="site-b" x="404" y="108" width="284" height="630" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="region"/>
+<text x="546" y="142" font-size="20" fill="#1e293b" text-anchor="middle" data-container="site-b">机房 B · 可信站点</text>
+<rect id="sae-b" x="420" y="174" width="252" height="112" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="546" y="207" font-size="20" fill="#1e293b" text-anchor="middle" data-container="sae-b">加密网关 B / SAE</text>
+<text x="546" y="242" font-size="18" fill="#475569" text-anchor="middle" data-container="sae-b">持有 K · 处理业务明文</text>
+<text x="546" y="270" font-size="17" fill="#475569" text-anchor="middle" data-container="sae-b">本例的加密或解密端点</text>
+<rect id="kme-b" x="420" y="390" width="252" height="112" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="546" y="423" font-size="20" fill="#1e293b" text-anchor="middle" data-container="kme-b">密钥管理 / KME</text>
+<text x="546" y="458" font-size="18" fill="#475569" text-anchor="middle" data-container="kme-b">key_ID ↔ K</text>
+<text x="546" y="486" font-size="17" fill="#475569" text-anchor="middle" data-container="kme-b">鉴权 · 密钥池 · 生命周期</text>
+<rect id="qkd-b" x="420" y="606" width="252" height="112" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="546" y="639" font-size="20" fill="#1e293b" text-anchor="middle" data-container="qkd-b">QKD 设备 B</text>
+<text x="546" y="674" font-size="18" fill="#475569" text-anchor="middle" data-container="qkd-b">量子收发与经典后处理</text>
+<text x="546" y="702" font-size="17" fill="#475569" text-anchor="middle" data-container="qkd-b">筛选 · 纠错 · 隐私放大</text>
+<path d="M644 390 V286" fill="none" stroke="#047857" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="428" y="333" font-size="18" fill="#047857" text-anchor="start">认证后本地供钥</text>
+<text x="428" y="362" font-size="17" fill="#475569" text-anchor="start">应用按标识取钥</text>
+<path d="M644 606 V502" fill="none" stroke="#047857" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="428" y="548" font-size="18" fill="#047857" text-anchor="start">产钥后本地注入</text>
+<text x="428" y="578" font-size="17" fill="#475569" text-anchor="start">管理可匹配的材料</text>
+<path d="M300 230 H420" fill="none" stroke="#64748b" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="360" y="206" font-size="17" fill="#1e293b" text-anchor="middle">ID / 密文</text>
+<text x="360" y="264" font-size="17" fill="#475569" text-anchor="middle">普通网络</text>
+<text x="360" y="430" font-size="17" fill="#047857" text-anchor="middle">两端匹配</text>
+<text x="360" y="458" font-size="17" fill="#047857" text-anchor="middle">同一份 K</text>
+<path d="M300 650 H420" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="360" y="631" font-size="17" fill="#7c3aed" text-anchor="middle">量子信号</text>
+<path d="M300 702 H420" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="360" y="685" font-size="17" fill="#475569" text-anchor="middle">认证交互</text>
+<text x="32" y="787" font-size="19" fill="#1e293b" text-anchor="start">本例保护两个网关之间的通信；网关属于可信端点。</text>
+<text x="32" y="821" font-size="18" fill="#475569" text-anchor="start">密钥通过受保护的本地路径交付，业务密文走普通网络。</text>
+<text x="32" y="853" font-size="18" fill="#475569" text-anchor="start">要延伸到用户终端，仍需终端侧密钥与加密设计。</text>
+</g></svg>

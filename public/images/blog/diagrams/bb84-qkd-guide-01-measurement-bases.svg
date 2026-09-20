@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="756" viewBox="0 0 720 756" role="img" aria-labelledby="title desc">
+<title id="title">换一种测量方式，会发生什么？</title><desc id="desc">→ / ↑ 与 ↗ / ↘ 两组线偏振方向。↗ 用同组方式测可读准，换组测结果随机，之后换回也无法恢复原来的确定性。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10z" fill="context-stroke"/></marker></defs>
+<rect width="720" height="756" rx="16" fill="#fff" data-role="background"/>
+<g font-family="system-ui, -apple-system, PingFang SC, Microsoft YaHei, sans-serif">
+<text x="32" y="80" font-size="18" fill="#475569" text-anchor="start">箭头表示线偏振方向。</text>
+<rect id="z" x="32" y="108" width="312" height="134" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="188" y="142" font-size="22" fill="#7c3aed" text-anchor="middle" data-container="z">Z Basis</text>
+<text x="188" y="181" font-size="22" fill="#1e293b" text-anchor="middle" data-container="z">→ 记为 0    ↑ 记为 1</text>
+<text x="188" y="217" font-size="18" fill="#475569" text-anchor="middle" data-container="z">两个方向互相垂直</text>
+<rect id="x" x="376" y="108" width="312" height="134" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.5" data-role="box"/>
+<text x="532" y="142" font-size="22" fill="#7c3aed" text-anchor="middle" data-container="x">X Basis</text>
+<text x="532" y="181" font-size="22" fill="#1e293b" text-anchor="middle" data-container="x">↗ 记为 0    ↘ 记为 1</text>
+<text x="532" y="217" font-size="18" fill="#475569" text-anchor="middle" data-container="x">两个斜方向也互相垂直</text>
+<rect id="input" x="160" y="282" width="400" height="70" rx="12" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.5" data-role="box"/>
+<text x="360" y="324" font-size="20" fill="#1e293b" text-anchor="middle" data-container="input">Alice 发出 ↗，表示 0</text>
+<path d="M360 352 V380 H188 V414" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M360 352 V380 H532 V414" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect id="same" x="32" y="414" width="312" height="126" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="box"/>
+<text x="188" y="450" font-size="21" fill="#1e293b" text-anchor="middle" data-container="same">按 ↗ / ↘ 测量</text>
+<text x="188" y="489" font-size="21" fill="#7c3aed" text-anchor="middle" data-container="same">一定读到 0</text>
+<text x="188" y="522" font-size="18" fill="#475569" text-anchor="middle" data-container="same">与发送方式一致</text>
+<rect id="other" x="376" y="414" width="312" height="126" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="box"/>
+<text x="532" y="450" font-size="21" fill="#1e293b" text-anchor="middle" data-container="other">按 → / ↑ 测量</text>
+<text x="532" y="489" font-size="21" fill="#1e293b" text-anchor="middle" data-container="other">可能读到 0，也可能是 1</text>
+<text x="532" y="522" font-size="18" fill="#475569" text-anchor="middle" data-container="other">原来的 ↗ 状态被改变</text>
+<path d="M532 540 V592" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect id="again" x="376" y="592" width="312" height="90" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" data-role="box"/>
+<text x="532" y="626" font-size="20" fill="#1e293b" text-anchor="middle" data-container="again">换回 ↗ / ↘ 再测</text>
+<text x="532" y="661" font-size="21" fill="#1e293b" text-anchor="middle" data-container="again">结果仍然不确定</text>
+<text x="48" y="625" font-size="20" fill="#475569" text-anchor="start">换回原来的方式，</text>
+<text x="48" y="660" font-size="20" fill="#475569" text-anchor="start">也补不回原来的确定性。</text>
+</g></svg>
